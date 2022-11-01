@@ -1,0 +1,164 @@
+:root {
+  --main-bg-dark: black;
+}
+body.page {
+  &.dark {
+    background-color: var(--main-bg-dark);
+    @apply text-white;
+
+    #topRoll {
+      @apply border-white;
+      background-color: var(--main-bg-dark);
+      & > ul {
+        @apply text-white;
+        li {
+          a {
+            @apply bg-white text-black;
+          }
+        }
+      }
+    }
+    #header {
+      background-color: var(--main-bg-dark) !important;
+      box-shadow: 0 1px 0 white;
+      .navigation {
+        & > [class^='btnNav'] {
+          @apply text-white;
+        }
+      }
+      .topArea__statelogon {
+        a {
+          @apply text-white no-underline;
+        }
+        .count {
+          span {
+            @apply border-black bg-white text-black;
+          }
+        }
+      }
+      .navigation__category {
+        li {
+          a {
+            @apply text-white;
+            &::before {
+              @apply bg-white;
+            }
+          }
+          ul {
+            &::before {
+              background-color: var(--main-bg-dark);
+              box-shadow: 0 1px 0 white;
+            }
+          }
+        }
+        .site-info {
+          @apply text-white;
+          .site-info--logo {
+            .light {
+              @apply absolute hidden h-0 w-0;
+            }
+            .dark {
+              @apply block;
+            }
+          }
+        }
+      }
+    }
+    #aside {
+      background-color: var(--main-bg-dark);
+      .navigation-menu__board {
+        border-top: 1px solid white !important;
+        .menu {
+          border-bottom: 1px solid white !important;
+          .sub-menu {
+            li {
+              a {
+                @apply text-white;
+              }
+            }
+          }
+          .btn-arrow {
+            @apply absolute top-2.5 right-2.5 block h-5 w-5 cursor-pointer bg-contain bg-no-repeat;
+            background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' xmlns:serif='http://www.serif.com/' style='fill-rule:evenodd;clip-rule:evenodd;'%3E%3Cpath d='M5,10l10,0' style='fill:none;fill-rule:nonzero;stroke:%23fff;stroke-width:2px;'/%3E%3Cpath d='M10,15l0,-10' style='fill:none;fill-rule:nonzero;stroke:%23fff;stroke-width:2px;'/%3E%3C/svg%3E");
+          }
+          &.is-open {
+            .btn-arrow {
+              background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' xmlns:serif='http://www.serif.com/' style='fill-rule:evenodd;clip-rule:evenodd;'%3E%3Cpath d='M5,10l10,0' style='fill:none;fill-rule:nonzero;stroke:%23fff;stroke-width:2px;'/%3E%3C/svg%3E");
+            }
+          }
+        }
+        & + .aside-menu-bottom {
+          ul {
+            li {
+              @apply border-white;
+              a {
+                @apply text-white;
+                .count {
+                  @apply bg-white text-black;
+                }
+              }
+            }
+          }
+        }
+      }
+      .slogan {
+        .light {
+          @apply hidden h-0;
+        }
+        .dark {
+          @apply block h-8;
+        }
+      }
+    }
+    .slbs-logo {
+      .light {
+        @apply hidden h-0;
+      }
+      .dark {
+        @apply block h-5;
+      }
+    }
+    .ul-nav-bottom,
+    .ul-nav-bottom > .item {
+      @apply border-white;
+    }
+    .ul-nav-bottom {
+      & > .item .span {
+        background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' xmlns:serif='http://www.serif.com/' style='fill-rule:evenodd;clip-rule:evenodd;'%3E%3Cpath d='M5,10l10,0' style='fill:none;fill-rule:nonzero;stroke:%23fff;stroke-width:2px;'/%3E%3Cpath d='M10,15l0,-10' style='fill:none;fill-rule:nonzero;stroke:%23fff;stroke-width:2px;'/%3E%3C/svg%3E");
+      }
+      .item.is-open {
+        .span {
+          background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' xmlns:serif='http://www.serif.com/' style='fill-rule:evenodd;clip-rule:evenodd;'%3E%3Cpath d='M5,10l10,0' style='fill:none;fill-rule:nonzero;stroke:%23fff;stroke-width:2px;'/%3E%3C/svg%3E");
+        }
+      }
+    }
+    .oval-logo {
+      .light {
+        @apply hidden h-0;
+      }
+      .dark {
+        @apply block h-8;
+      }
+    }
+    #zeein-footer {
+      @apply border-white;
+    }
+    #zeein-footer .grid-right,
+    .xans-layout-footer .grid-right {
+      @apply border-white;
+    }
+    .xans-layout-footer {
+      @apply border-white;
+    }
+  }
+  #aside {
+    .slogan {
+      .dark {
+        @apply hidden h-0;
+      }
+      .light {
+        @apply block h-8;
+      }
+    }
+  }
+}

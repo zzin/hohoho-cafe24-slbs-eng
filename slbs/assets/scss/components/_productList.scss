@@ -32,7 +32,7 @@
       }
       a {
         img {
-          @apply transition-none;
+          @apply w-full transition-none;
         }
         &:hover {
           img {
@@ -63,7 +63,7 @@
         }
         .spec {
           @apply mt-0;
-          .xans-record- {
+          .zLi {
             span {
               @apply whitespace-nowrap;
               color: black !important;
@@ -85,7 +85,7 @@
       @apply relative;
       &.is-soldout {
         .spec {
-          .xans-record- {
+          .zLi {
             span {
               color: #f00 !important;
             }

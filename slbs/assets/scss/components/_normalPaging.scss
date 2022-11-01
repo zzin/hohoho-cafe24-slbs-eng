@@ -1,0 +1,12 @@
+.ec-base-paginate {
+  @apply flex items-center justify-center;
+  li {
+    @apply border-black;
+    a {
+      @apply text-black;
+      &.this {
+        @apply border-b-0 bg-black py-[9px] text-white;
+      }
+    }
+  }
+}
