@@ -1,0 +1,332 @@
+.xans-product-headcategory.path {
+  @apply hidden;
+}
+
+#contents[role='detail'] {
+  @apply max-w-full p-0;
+  .xans-product-detail {
+    @apply relative z-10 pt-0;
+    .detailArea {
+      @apply relative border-b border-black p-0 text-[0] leading-[0];
+      .imgArea,
+      .infoArea {
+        @apply m-0 w-full lg:w-1/2;
+      }
+      .imgArea {
+        @apply pointer-events-none border-black lg:border-r;
+        img {
+          @apply w-full;
+        }
+      }
+      .infoArea {
+        @apply sticky top-[96px] overflow-hidden leading-none;
+        .infoArea--wrap {
+          @apply flex flex-col justify-between lg:min-h-[calc(100vh-96px)];
+        }
+        .guideArea {
+          @apply m-0;
+        }
+        .headingArea {
+          @apply mb-0 border-b border-black p-2.5 lg:p-5;
+          h1 {
+            @apply text-[28px] font-bold leading-tight lg:text-[44px];
+          }
+          .productAction {
+            @apply top-[30px] right-5 lg:top-[58px];
+          }
+        }
+        .productOption {
+          @apply border-b border-black px-2.5 pb-0 lg:px-5;
+          table {
+            @apply m-0;
+            tbody {
+              @apply border-none;
+              tr {
+                @apply my-5 flex flex-col;
+                th {
+                  @apply min-w-[150px] p-0 pb-2 text-base;
+                }
+                td {
+                  @apply w-full p-0;
+                }
+              }
+            }
+          }
+          select {
+            @apply h-10 border-black text-base text-black;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 6v12m6-6H6' /%3E%3C/svg%3E%0A");
+            background-size: 20px 20px;
+          }
+        }
+        .cont {
+          @apply px-2.5 pt-5 text-sm uppercase leading-tight lg:px-5 lg:text-base;
+          p + p {
+            @apply mt-2;
+          }
+        }
+        .infoArea--lower {
+          .buttonWrap {
+            @apply hidden p-0 lg:flex;
+            button {
+              @apply rounded-none;
+            }
+            .btnNormal {
+              @apply m-0 border-none;
+            }
+          }
+        }
+        span {
+          &.icon {
+            @apply hidden;
+          }
+        }
+      }
+    }
+    .xans-product-action {
+      @apply border-t-0 p-0;
+      .gActionButtonColumn {
+        @apply m-0;
+      }
+      .ec-base-button {
+        @apply p-0;
+        &[class*='gColumn'] [class^='btn'] {
+          @apply m-0 border-transparent bg-gray-200 font-bold;
+          &.btnSubmit {
+            @apply bg-black;
+          }
+        }
+      }
+    }
+  }
+  .xans-product-additional {
+    @apply m-0;
+    .ec-base-tab.gFlex {
+      .menu {
+        @apply hidden;
+      }
+      .cont,
+      .board {
+        @apply p-0;
+      }
+    }
+    .prdReview--title {
+      @apply border-b border-black py-3 px-2.5 text-lg font-bold leading-none lg:px-5 lg:text-[22px];
+    }
+  }
+  .ec-base-tab {
+    @apply m-0 p-0;
+    .board {
+      .ec-base-button {
+        @apply mx-0 px-2.5 lg:px-5;
+        [class^='btn'] + [class^='btn'] {
+          @apply ml-2.5;
+        }
+      }
+    }
+  }
+  [class^='btn'].sizeL {
+    @apply w-full border-none;
+  }
+  [class^='btnSubmit'],
+  a[class^='btnSubmit'] {
+    @apply border-none bg-black;
+  }
+
+  .xans-product-relation {
+    .relation {
+      @apply mx-0 mt-6 mb-0 pb-0 text-black;
+      h2 {
+        @apply m-0 border-t border-black px-2.5 py-3 text-left text-lg font-bold leading-none text-black lg:px-5 lg:text-[22px];
+      }
+    }
+    .prdList {
+      @apply m-0 grid w-full min-w-0 grid-cols-2 border-t border-black p-0 lg:grid-cols-4;
+      .prdList__item {
+        @apply m-0 w-full border-b border-r border-black;
+        &:nth-child(n + 5) {
+          @apply hidden;
+        }
+        &:nth-child(2n) {
+          @apply border-r-0 lg:border-r;
+        }
+        &:nth-child(4n) {
+          @apply border-r-0;
+        }
+        .box {
+          @apply relative;
+          .box-desc {
+            @apply absolute left-0 bottom-0 flex w-full justify-between bg-white/80 px-5 py-3 text-xs font-bold lg:text-xl;
+            .name {
+              @apply mb-0;
+            }
+            .price {
+              @apply whitespace-nowrap pl-2;
+            }
+          }
+        }
+        .thumb {
+          @apply mb-0;
+          img {
+            @apply min-w-full;
+            &.icon_img {
+              @apply hidden;
+              & + img {
+                @apply opacity-50 blur-[4px];
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#modalDetail {
+  #modalCommodity .modal-content ul li:nth-child(n + 2):nth-child(-n + 6) {
+    @apply hidden;
+  }
+  #modalCommodity .modal-content ul li {
+    strong,
+    span {
+      font-size: 14px !important;
+      font-weight: normal !important;
+      color: black !important;
+      line-height: 20px;
+    }
+  }
+  .xans-product-additional {
+    @apply m-0;
+  }
+  .modal-title {
+    @apply mb-2.5 flex justify-between;
+    h3 {
+      @apply text-sm font-bold;
+    }
+    .modal-close {
+      @apply h-5 w-5 overflow-hidden bg-cover bg-center bg-no-repeat -indent-[9999px];
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' class='w-5 h-5'%3E%3Cpath d='M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z' /%3E%3C/svg%3E%0A");
+    }
+  }
+}
+
+#totalProducts {
+  @apply mt-5 border-t border-black px-2.5 pt-2.5 lg:px-5 lg:pt-0;
+  thead {
+    @apply hidden;
+    th {
+      @apply h-0 p-0 text-[0px] leading-[0];
+    }
+  }
+  tbody {
+    tr:not(.xans-record-) {
+      @apply relative block p-0 pb-2;
+    }
+    td {
+      p {
+        @apply pt-4 font-normal;
+        &.product span {
+          @apply text-black;
+        }
+      }
+      .quantity {
+        @apply relative inline-block px-[30px] align-top;
+        width: 103px !important;
+        input {
+          @apply -ml-[1px] w-[45px] rounded-none border-black p-0 text-center;
+          height: 30px !important;
+          line-height: 28px !important;
+          &:focus,
+          &:hover {
+            @apply border-black;
+          }
+        }
+        img {
+          @apply absolute top-0 left-0 z-10 h-full w-full opacity-0;
+        }
+        a {
+          @apply h-[30px] w-[30px] overflow-hidden whitespace-nowrap border border-black indent-80 text-[1px] text-transparent;
+          &.up {
+            @apply absolute left-auto right-0 top-0;
+            &::after {
+              content: '';
+              @apply absolute left-1/2 top-[calc(50%-4px)] h-[9px] w-[1px] bg-black;
+            }
+          }
+          &.down {
+            @apply absolute left-0 top-0;
+          }
+          &:before {
+            content: '';
+            @apply absolute left-[10px] top-1/2 h-[1px] w-[9px] bg-black;
+          }
+        }
+      }
+    }
+  }
+  tr {
+    & > td:nth-child(1) {
+      @apply text-base;
+    }
+    &::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+  & > table {
+    & > .option_products .option_product,
+    tbody:first-of-type {
+      @apply border-b border-solid border-[#e5e5e5];
+    }
+    & > tbody {
+      @apply block;
+      & > tr {
+        &:first-child {
+          & > td {
+            @apply border-t-0;
+          }
+        }
+        & > td {
+          &:first-child {
+            @apply pl-0;
+          }
+          &:nth-child(2) {
+            @apply float-left py-4;
+          }
+          &.right {
+            @apply float-right pt-5 pr-8 text-base text-black;
+          }
+        }
+      }
+    }
+  }
+  table tr.option_product + tr.option_product > td {
+    @apply border-t-0;
+  }
+  .delete {
+    @apply absolute right-0 bottom-8 inline-block h-3 w-3;
+    margin: 10px 0 0 5px;
+    background: url(//img.echosting.cafe24.com/skin/skin/product/ico_product_delete.svg) no-repeat 0
+      0;
+    img {
+      @apply opacity-0;
+    }
+  }
+}
+#totalPrice {
+  @apply mt-0 flex justify-between border-t-0 px-2.5 pt-5 lg:px-5 lg:pt-5;
+  & > table > .option_products .option_product {
+    @apply pl-0 lg:pl-2.5;
+  }
+  .total {
+    strong {
+      @apply text-2xl text-black;
+    }
+  }
+}
+#orderFixArea {
+  @apply fixed left-0 bottom-0 w-full lg:hidden;
+}
+
+// #zReviewWrap {
+// }

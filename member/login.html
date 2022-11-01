@@ -1,80 +1,115 @@
 <!--@layout(/layout/basic/layout.html)-->
-<div class="path">
-    <span>Current Page</span>
-    <ol>
-        <li><a href="/">Home</a></li>
-        <li title="Current Page"><strong>Sign In</strong></li>
-    </ol>
-</div>
+<script type="text/javascript">
+  (function () {
+    function checkGuestOrder() {
+      const param = location.search;
+      if (param.indexOf('noMemberOrder') === -1) {
+        let href = location.href;
+        if (!param) {
+          href = href + '?noMemberOrder&returnUrl=%2Fmyshop%2Forder%2Flist.html';
+        } else {
+          href = href + '&noMemberOrder';
+        }
+        location.replace(href);
+      }
+    }
+    checkGuestOrder();
+  })();
+</script>
 
-<div class="titleArea">
-    <h2>Sign In</h2>
-</div>
-
-<div module="member_login" class="ec-base-box typeThin">
-    <!--@css(/css/module/member/login.css)-->
-    <!--
+<div class="login-wrap">
+  <div class="login-member">
+    <h2 class="title">LOGIN</h2>
+    <div module="member_login">
+      <!--@css(/css/module/member/login.css)-->
+      <!--@js(/js/module/member/login.js)-->
+      <!--
         $defaultReturnUrl = /index.html
         $forbidIpUrl = member/adminFail.html
-    -->
-    <div class="login">
-        <h3 class="boxTitle">Member Sign In</h3>
-        <fieldset>
-            <legend>Log in</legend>
-            <label class="id ePlaceholder" title="{$login_id_type_text}">{$form.member_id}</label>
-            <label class="password ePlaceholder" title="Password">{$form.member_passwd}</label>
-            <p class="security">
-                {$form.member_check_save_id}
-                {$form.member_check_secret_connect}
-            </p>
-            <a href="#none" class="btnLogin" onclick="{$action_func_login}">Sign In</a>
-            <ul class="snsArea">
-                <li class="{$display_naver|display}">
-                    <a href="#none" onclick="{$naver_func_login}"><img src="//img.echosting.cafe24.com/skin/base_en_US/member/btn_naver_login.gif" alt="Login with Naver" /></a>
-                </li>
-                <li class="{$display_facebook|display}">
-                    <a href="#none" onclick="{$facebook_func_login}"><img src="//img.echosting.cafe24.com/skin/base_en_US/member/btn_facebook_login.gif" alt="Login with Facebook" /></a>
-                </li>
-                <li class="{$display_google|display}">
-                    <a href="#none" onclick="{$google_func_login}"><img src="//img.echosting.cafe24.com/skin/base_en_US/member/btn_google_login.gif" alt="Login with Google" /></a>
-                </li>
-                <li class="{$display_kakao|display}">
-                    <a href="#none" onclick="{$kakao_func_login}"><img src="//img.echosting.cafe24.com/skin/base_en_US/member/btn_kakao_login.gif" alt="Start with Kakao" /></a>
-                </li>
-                <li class="{$display_line|display}">
-                    <a href="#none" onclick="{$line_func_login}"><img src="//img.echosting.cafe24.com/skin/base_en_US/member/btn_line_login.gif" alt="Login with LINE" /></a>
-                </li>
-                <li class="{$display_apple|display}">
-                    <a href="#none" onclick="{$apple_func_login}"><img src="//img.echosting.cafe24.com/skin/base_en_US/member/btn_apple_login.gif" alt="Login with Apple" /></a>
-                </li>
-                <li class="{$display_yahoojp|display}">
-                    <a href="#none" onclick="{$yahoojp_func_login}"><img src="//img.echosting.cafe24.com/skin/base_en_US/member/btn_yahoo_login.gif" alt="Login with Yahoo!" /></a>
-                </li>
-            </ul>
-            <ul>
-                <li class="{$display_find_id|display}"><a href="/member/id/find_id.html">Forgot ID</a></li>
-                <li><a href="/member/passwd/find_passwd_info.html">Forgot Password</a></li>
-                <li><a href="/member/join.html">Sign Up</a></li>
-            </ul>
-            <p class="link {$display_nomember|display}" id="noMemberWrap">
-                You can also shop as a guest user.<br />Please note that some promotions <br/> and discounts may not be available <br/> to guests.
-                <a href="{$returnUrl}" class="btnEm" onclick="{$action_nomember_order}">Guest Checkout</a>
-            </p>
-        </fieldset>
+      -->
+      <fieldset class="form">
+        <legend>Member Login</legend>
+        <label class="id ePlaceholder" title="{$login_id_type_text}">
+          <strong>ID</strong>
+          {$form.member_id}
+        </label>
+        <label class="password ePlaceholder" title="password">
+          <strong>PASSWORD</strong>
+          {$form.member_passwd}
+        </label>
+        <div class="login__security">
+          {$form.member_check_save_id}
+          <span class="secret">{$form.member_check_secret_connect}</span>
+        </div>
+        <div class="login__button">
+          <a href="#none" class="btnSubmit gFull sizeL" onclick="{$action_func_login}">LOGIN</a>
+        </div>
+        <ul class="login-util">
+          <li><a href="/member/id/find_id.html">FIND ID</a></li>
+          <li><a href="/member/passwd/find_passwd_info.html">FIND PW</a></li>
+        </ul>
+        <div class="login__sns">
+          <span class="hidden">SNS</span>
+          <a href="#none" class="btnKakao {$display_kakao|display}" onclick="{$kakao_func_login}"
+            >KAKAO</a
+          >
+          <a href="#none" class="btnNaver {$display_naver|display}" onclick="{$naver_func_login}"
+            >NAVER</a
+          >
+          <a
+            href="#none"
+            class="btnFacebook {$display_facebook|display}"
+            onclick="{$facebook_func_login}"
+            >FacebooK</a
+          >
+          <a href="#none" class="btnLine {$display_line|display}" onclick="{$line_func_login}"
+            >LINE</a
+          >
+          <a href="#none" class="btnGoogle {$display_google|display}" onclick="{$google_func_login}"
+            >Google</a
+          >
+          <a href="#none" class="btnApple {$display_apple|display}" onclick="{$apple_func_login}"
+            >Apple</a
+          >
+        </div>
+      </fieldset>
+      <div class="member-sign">
+        <strong
+          >CREATE<br class="hidden lg:block" />
+          ACCOUNT</strong
+        >
+        <div>
+          <p>
+            By creating an account with SLASHBSLASH, you will be able to check your orders, edit and
+            save shipping preferences.
+          </p>
+          <a href="/member/agreement.html" class="btnSubmit gFull sizeL mt-7 block"
+            >CREATE ACCOUNT</a
+          >
+          <a
+            href="{$returnUrl}"
+            onclick="{$action_nomember_order}"
+            class="btnNormal gFull sizeL {$display_nomember|display}"
+            >GUEST CHECKOUT</a
+          >
+        </div>
+      </div>
     </div>
-</div>
-
-<div module="MyShop_OrderHistoryNologin" class="ec-base-box typeThin">
-    <!--@css(/css/module/myshop/orderHistoryNologin.css)-->
-    <!--
-        $orderDetailUrl = /myshop/order/list.html
-    -->
-    <h3 class="boxTitle">Guest Checkout</h3>
-    <p>When you shop as a guest,<br/>you can look up your order details with your order number.</p>
-    <dl class="ec-base-desc gBlank20">
-        <dt>{$form_label.order_name}</dt><dd>{$form.order_name}</dd>
-        <dt>{$form_label.order_id}</dt><dd>{$form.order_id}</dd>
-        <dt>{$form_label.order_password}</dt><dd>{$form.order_password}</dd>
-    </dl>
-    <p class="ec-base-button gColumn"><button type="submit" class="btnNormal sizeM">Search</button></p>
+  </div>
+  <div class="login-guest">
+    <h2 class="title">NON MEMBER <small>ORDER CHECK</small></h2>
+    <div module="MyShop_OrderHistoryNologin">
+      <!--
+        $orderDetailUrl = /myshop/order/detail.html
+      -->
+      <ul>
+        <li><strong>{$form_label.order_name}</strong> {$form.order_name}</li>
+        <li class="number"><strong>{$form_label.order_id}</strong> {$form.order_id}</li>
+        <li><strong>{$form_label.order_password}</strong> {$form.order_password}</li>
+      </ul>
+      <div class="button">
+        <input type="submit" class="btnSubmit gFull sizeL mt-7" alt="로그인" value="ORDER CHECK" />
+      </div>
+    </div>
+  </div>
 </div>

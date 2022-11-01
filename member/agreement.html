@@ -1,18 +1,91 @@
 <!--@layout(/layout/basic/layout.html)-->
-<div class="path">
-    <span>Current Page</span>
-    <ol>
-        <li><a href="/">Home</a></li>
-        <li title="Current Page"><strong>Terms and Conditions</strong></li>
-    </ol>
+<div class="breadcrumb">
+  <h2>CREATE AN ACCOUNT <em>> COMPLETE</em></h2>
 </div>
 
-<div class="titleArea">
-    <h2>Terms and Conditions</h2>
-</div>
+<div class="sign-wrap">
+  <h2 class="title">CREATE AN ACCOUNT</h2>
+  <div class="mt-5 grid grid-cols-2 lg:mt-14 lg:gap-5">
+    <div class="col-span-2 lg:col-span-1">
+      <div module="member_join" class="gInnerMargin">
+        <div class="agreeAll">
+          <h3>AGREE</h3>
+          <div>
+            {$sAgreeAllChecked}
+            <label for="sAgreeAllChecked" class="{$display_marketing|display}">AGREE ALL</label>
+            <label for="sAgreeAllChecked" class="{$display_is_agree|display}">AGREE ALL</label>
+          </div>
+        </div>
+        <div class="contents-wrap">
+          <strong>Terms of use<br class="hidden lg:block" />(ESSENTIAL)</strong>
+          <div class="desc">
+            <div class="box-scroll">
+              <div class="contents">{$service_desc}</div>
+            </div>
+            <div class="custom-checkbox">
+              {$form.agree_service_check}
+              <label for="agree_service_check0" class="check">AGREE</label>
+            </div>
+          </div>
+        </div>
 
-<div module="mall_term" class="ec-base-box typeThinBg ">
-    <div class="agree">
-        {$mall_agreement}
+        <div class="contents-wrap">
+          <strong>PRIVACY POLICY<br class="hidden lg:block" />(ESSENTIAL)</strong>
+          <div class="desc">
+            <div class="box-scroll">
+              <div class="contents">{$privacy_desc}</div>
+            </div>
+            <div class="custom-checkbox">
+              {$form.agree_privacy_check}
+              <label for="agree_privacy_check0" class="check">AGREE</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="agreeArea contents-wrap {$display_marketing|display}">
+          <strong>쇼핑정보수신<br class="hidden lg:block" />(선택)</strong>
+          <div class="desc">
+            <div class="title">
+              <h3 class="mb-2">
+                {$sMarketingAgreeAllChecked}<label for="sMarketingAgreeAllChecked" class="check"
+                  >쇼핑정보 수신 전체 동의 (선택)</label
+                >
+              </h3>
+              <ul class="additional">
+                <li class="{$display_is_sms|display}">
+                  {$form.is_sms}<label for="is_sms0" class="check">SMS 수신 동의 (선택)</label>
+                </li>
+                <li class="{$display_is_news_mail|display}">
+                  {$form.is_news_mail}<label for="is_news_mail0" class="check"
+                    >이메일 수신 동의 (선택)</label
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="mt-2 bg-[#f5f5f5] p-3">
+              <p>
+                할인쿠폰 및 혜택, 이벤트, 신상품 소식 등 쇼핑몰에서 제공하는 유익한 쇼핑정보를 SMS나
+                이메일로 받아보실 수 있습니다. 단, 주문/거래 정보 및 주요 정책과 관련된 내용은
+                수신동의 여부와 관계없이 발송됩니다.
+              </p>
+              <p>
+                선택 약관에 동의하지 않으셔도 회원가입은 가능하며, 회원가입 후 회원정보수정
+                페이지에서 언제든지 수신여부를 변경하실 수 있습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ec-base-button gBottom">
+        <button
+          type="button"
+          class="btnSubmitFix sizeM w-full"
+          onclick="checkAgreement('/member/join.html');"
+        >
+          NEXT
+        </button>
+      </div>
     </div>
+  </div>
 </div>

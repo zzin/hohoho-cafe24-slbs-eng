@@ -1,0 +1,9 @@
+.breadcrumb {
+  @apply flex items-stretch justify-between border-b border-black px-2.5 uppercase lg:px-5;
+  h2 {
+    @apply text-lg font-bold leading-[39px] lg:text-[22px] lg:leading-[57px];
+    & > em {
+      @apply not-italic opacity-30;
+    }
+  }
+}

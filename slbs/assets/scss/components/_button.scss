@@ -1,0 +1,5 @@
+[class^='btn'],
+[class^='btnSubmit'],
+a[class^='btnSubmit'] {
+  @apply rounded-none text-xl uppercase;
+}

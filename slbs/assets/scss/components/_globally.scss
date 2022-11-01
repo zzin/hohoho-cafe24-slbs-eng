@@ -1,5 +1,5 @@
 body {
-  @apply min-w-full max-w-full font-sans;
+  @apply min-w-full max-w-full font-sans text-black;
   &[data-body='normal'] {
     @apply pt-[72px] text-base text-black lg:pt-[96px];
     letter-spacing: 0em;
@@ -23,6 +23,9 @@ body {
         }
       }
     }
+  }
+  a {
+    @apply text-black;
   }
 }
 #container {

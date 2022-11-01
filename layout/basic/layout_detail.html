@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+
+    <!-- Do not delete. Required code for payment. -->
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <!-- // Do not delete. Required code for payment. -->
+
+    <title>Basic Layout</title>
+    <!--@css(/layout/basic/css/common.css)-->
+    <!--@css(/layout/basic/css/layout.css)-->
+    <!--@css(/layout/basic/css/ec-base-ui.css)-->
+    <!--@css(/layout/basic/css/ec-base-tooltip.css)-->
+    <!--@css(/layout/basic/css/ec-base-help.css)-->
+    <!--@css(/layout/basic/css/ec-base-product.css)-->
+    <!--@css(/layout/basic/css/ec-base-paginate.css)-->
+    <!--@css(/layout/basic/css/ec-base-tab.css)-->
+    <!--@css(/layout/basic/css/ec-base-button.css)-->
+    <!--@css(/layout/basic/css/ec-base-box.css)-->
+    <!--@css(/layout/basic/css/ec-base-table.css)-->
+    <!--@css(/layout/basic/css/ec-base-desc.css)-->
+
+    <!--@css(/layout/basic/css/fonts.css)-->
+    <!--@css(/dist/main.css)-->
+
+    <!--@js(/layout/basic/js/basic.js)-->
+
+    <!--@js(/js/common.js)-->
+    <!--@js(/js/module/layout/quick_view.js)-->
+
+    <!--@js(/layout/basic/js/layout.js)-->
+  </head>
+  <body id="main" class="page" data-body="normal">
+    <div id="skipNavigation">
+      <p><a href="#category">See All Categories</a></p>
+      <p><a href="#contents">Learn More</a></p>
+    </div>
+
+    <!--@import(/layout/basic/top_roll.html)-->
+    <div id="header" class="fixed">
+      <div class="inner">
+        <div class="topLogo">
+          <h1 module="Layout_LogoTop" class="h1TopLogo">
+            <a href="/index.html"
+              ><img
+                src="/web/upload/slbs/images/logo/logo-slbs.svg"
+                alt="{$mall_name}"
+                class="h-[18px] w-auto lg:h-5"
+            /></a>
+          </h1>
+          <!--@import(/layout/basic/state_login.html)-->
+        </div>
+        <!--@import(/layout/basic/navigation.html)-->
+      </div>
+    </div>
+    <hr class="layout" />
+    <!--@import(/layout/basic/sidebar.html)-->
+
+    <div id="wrap">
+      <div id="container">
+        <main id="contents" role="detail">
+          <!--@contents-->
+        </main>
+        <hr class="layout" />
+      </div>
+      <hr class="layout" />
+    </div>
+    <hr class="layout" />
+
+    <!--@import(/layout/basic/footer.html)-->
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"
+      integrity="sha512-GQ5/eIhs41UXpG6fGo4xQBpwSEj9RrBvMuKyE2h/2vw3a9x85T1Bt0JglOUVJJLeyIUl/S/kCdDXlE/n7zCjIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>
