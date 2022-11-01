@@ -1,0 +1,12 @@
+.swiper-control {
+  @apply absolute bottom-[5%] z-[100] mx-auto h-2.5 w-full overflow-hidden text-center;
+  .swiper-pagination {
+    @apply relative mx-2.5 inline-block h-2.5 text-center;
+    .swiper-pagination-bullet {
+      @apply mx-[7px] bg-white;
+      &.swiper-pagination-bullet-active {
+        @apply w-[30px] rounded;
+      }
+    }
+  }
+}

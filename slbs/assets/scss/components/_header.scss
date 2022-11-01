@@ -72,8 +72,11 @@
 
 // zeein
 #header {
-  @apply fixed top-0 z-[1002] h-24 w-full border-b-0 bg-white pt-10;
+  @apply fixed top-0 z-[1002] h-[72px] w-full border-b-0 bg-white pt-8 lg:h-24 lg:pt-10;
   box-shadow: 0 1px 0 black;
+  &::before {
+    @apply border-t-0;
+  }
   &::after {
     @apply border-t-0 bg-transparent transition-none;
   }
@@ -81,9 +84,12 @@
     @apply static w-full;
   }
   .navigation {
-    @apply absolute top-[5px] left-0 right-0 z-[22];
+    @apply absolute top-0 left-0 right-0 z-[22];
     & > [class^='btnNav'] {
-      @apply hidden;
+      @apply absolute left-auto right-2.5 top-10 block w-auto text-xl font-bold text-black lg:top-[50px] lg:hidden;
+      &.btnNavClose {
+        @apply hidden;
+      }
     }
     li {
       a {
@@ -98,7 +104,7 @@
       @apply absolute left-2.5 top-2.5 z-[1030] lg:left-5 lg:top-4;
     }
     .topArea__statelogon {
-      @apply absolute top-4 right-6 z-[24];
+      @apply absolute top-4 right-6 z-[24] hidden lg:block;
       a {
         @apply ml-5 inline-block text-base leading-6;
       }
@@ -111,7 +117,7 @@
     }
   }
   .navigation__category {
-    @apply pt-[35px] transition-none;
+    @apply hidden pt-8 transition-none lg:block lg:pt-10;
     & > ul {
       @apply flex justify-center;
     }

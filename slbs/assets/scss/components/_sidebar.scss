@@ -1,0 +1,61 @@
+#aside {
+  @apply mt-[72px] flex flex-col justify-between;
+  .slogan {
+    @apply p-2.5 text-sm uppercase;
+  }
+  .copyright {
+    @apply p-2.5 text-xs font-bold uppercase;
+  }
+  .navigation-menu__board {
+    @apply border-t border-black p-0;
+    // border-top: 1px solid black !important;
+    // padding: 0 !important;
+    .menu {
+      @apply relative m-0 h-10 overflow-hidden border-b border-black;
+      transition: height 0.4s ease-in-out;
+      & > a {
+        @apply inline-block py-0 px-2.5 text-[22px] font-bold leading-10;
+      }
+      .btn-arrow {
+        @apply absolute top-2.5 right-2.5 block h-5 w-5 cursor-pointer bg-contain bg-no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' xmlns:serif='http://www.serif.com/' style='fill-rule:evenodd;clip-rule:evenodd;'%3E%3Cpath d='M5,10l10,0' style='fill:none;fill-rule:nonzero;stroke:%23000;stroke-width:2px;'/%3E%3Cpath d='M10,15l0,-10' style='fill:none;fill-rule:nonzero;stroke:%23000;stroke-width:2px;'/%3E%3C/svg%3E");
+      }
+      &.is-open {
+        height: calc(40px + var(--h));
+        .btn-arrow {
+          background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' xmlns:serif='http://www.serif.com/' style='fill-rule:evenodd;clip-rule:evenodd;'%3E%3Cpath d='M5,10l10,0' style='fill:none;fill-rule:nonzero;stroke:%23000;stroke-width:2px;'/%3E%3C/svg%3E");
+        }
+      }
+      .sub-menu {
+        @apply pb-2.5;
+        li {
+          @apply m-0 p-0;
+          a {
+            @apply px-2.5 text-base leading-8 text-black;
+          }
+        }
+      }
+      li {
+        &:last-child {
+          @apply mb-0;
+        }
+      }
+    }
+    & + .aside-menu-bottom {
+      ul {
+        li {
+          @apply border-b border-black;
+          a {
+            @apply relative mb-0 px-2.5 text-[22px] font-bold uppercase leading-10 text-black hover:no-underline;
+            .count {
+              @apply absolute top-2 ml-0.5 inline-block rounded-full bg-black px-2 text-[10px] leading-4 text-white;
+            }
+          }
+        }
+      }
+      .navigation-menu__member__bottom {
+        @apply p-0;
+      }
+    }
+  }
+}

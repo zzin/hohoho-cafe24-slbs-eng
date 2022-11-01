@@ -1,0 +1,105 @@
+/* product > list */
+.xans-product-normalpackage .product_area {
+  @apply m-0;
+}
+.ec-base-product {
+  @apply m-0;
+  .ec-base-product--title {
+    @apply border-b border-black px-2.5 py-1.5 text-lg font-bold lg:py-3 lg:px-5 lg:text-[22px];
+  }
+  .prdList {
+    @apply m-0 grid min-w-full grid-cols-2 lg:grid-cols-4;
+    & > li {
+      @apply m-0 w-full border-b border-black;
+      &:not(:nth-child(4n)) {
+        @apply border-r;
+      }
+      &:nth-child(2n) {
+        @apply border-r-0 lg:border-r;
+      }
+      &:nth-child(4n) {
+        @apply lg:border-r-0;
+      }
+    }
+
+    .prdList__item {
+      @apply relative m-0 h-full w-full;
+    }
+    .thumbnail {
+      @apply m-0 bg-white;
+      .icon_img {
+        @apply invisible hidden;
+      }
+      a {
+        img {
+          @apply transition-none;
+        }
+        &:hover {
+          img {
+            @apply opacity-100;
+          }
+        }
+      }
+    }
+    .description {
+      @apply absolute left-0 bottom-0 m-0 w-full bg-white/50 p-2.5 text-left text-black lg:py-3 lg:px-5;
+      .model {
+        @apply text-[10px] uppercase lg:text-base;
+      }
+      .nameNPrice {
+        @apply flex justify-between;
+        .name {
+          a {
+            span {
+              color: black !important;
+              font-size: 0.75rem /* 12px */ !important;
+              line-height: 1rem /* 16px */ !important;
+              @media (min-width: 1024px) {
+                font-size: 1.25rem /* 20px */ !important;
+                line-height: 1.75rem /* 28px */ !important;
+              }
+            }
+          }
+        }
+        .spec {
+          @apply mt-0;
+          .xans-record- {
+            span {
+              @apply whitespace-nowrap;
+              color: black !important;
+              font-size: 0.75rem /* 12px */ !important;
+              line-height: 1rem /* 16px */ !important;
+              @media (min-width: 1024px) {
+                font-size: 1.25rem /* 20px */ !important;
+                line-height: 1.75rem /* 28px */ !important;
+              }
+            }
+          }
+          & > li:nth-child(n + 2) {
+            @apply invisible hidden;
+          }
+        }
+      }
+    }
+    .xans-record- {
+      @apply relative;
+      &.is-soldout {
+        .spec {
+          .xans-record- {
+            span {
+              color: #f00 !important;
+            }
+          }
+        }
+        img {
+          @apply opacity-50 blur-[4px];
+        }
+        a:hover {
+          img {
+            @apply opacity-50;
+          }
+        }
+      }
+    }
+  }
+}

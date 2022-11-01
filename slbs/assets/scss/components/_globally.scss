@@ -1,9 +1,35 @@
 body {
-  @apply max-w-full font-sans;
+  @apply min-w-full max-w-full font-sans;
   &[data-body='normal'] {
-    @apply pt-[72px] lg:pt-[96px];
+    @apply pt-[72px] text-base text-black lg:pt-[96px];
+    letter-spacing: 0em;
+  }
+  .dimmed {
+    @apply hidden bg-black/30;
+  }
+  &.expand {
+    #layoutDimmed {
+      @apply block;
+    }
+    #header {
+      .navigation {
+        & > [class^='btnNav'] {
+          &.btnNav {
+            @apply hidden;
+          }
+          &.btnNavClose {
+            @apply block;
+          }
+        }
+      }
+    }
   }
 }
 #container {
   overflow: initial;
+  @apply m-0 w-full;
+}
+
+#contents {
+  @apply float-none w-full lg:min-h-[700px];
 }
