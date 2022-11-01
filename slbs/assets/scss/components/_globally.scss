@@ -1,0 +1,9 @@
+body {
+  @apply max-w-full font-sans;
+  &[data-body='normal'] {
+    @apply pt-[72px] lg:pt-[96px];
+  }
+}
+#container {
+  overflow: initial;
+}

@@ -1,0 +1,73 @@
+<div class="navigation">
+  <button type="button" class="btnNav eNavFold">
+    <span class="text-menu">MENU</span>
+  </button>
+  <button type="button" class="btnNavClose">
+    <span class="text-menu">CLOSE</span>
+  </button>
+  <!--@js(/slbs/assets/js/header.js)-->
+  <div class="navigation__category">
+    <!--@css(/css/module/layout/category.css)-->
+    <ul>
+      <li class="has-info">
+        <a href="/layout/basic/about_us.html">BRAND</a>
+        <ul>
+          <li><a href="/layout/basic/about_us.html">ABOUT US</a></li>
+          <li><a href="/layout/basic/nfc.html">NFC TECH</a></li>
+          <li><a href="/slbs/contact_us.html">CONTACT US</a></li>
+          <li><a href="/slbs/stocklist.html">STOCKLIST</a></li>
+        </ul>
+      </li>
+      <li id="category" module="Layout_category" class="has-info">
+        <a href="/product/list.html?cate_no=24">SHOP</a>
+        <ul>
+          <li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+          <li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+          <li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+        </ul>
+      </li>
+      <li class="has-info">
+        <a href="/slbs/campaign.html">CAMPAIGN</a>
+        <ul>
+          <li><a href="/slbs/campaign3.html">CHERRY ON TOP</a></li>
+          <li><a href="/slbs/campaign2.html">SOCIAL DETOXIFYING</a></li>
+          <li><a href="/slbs/campaign1.html">NEW XENERATION</a></li>
+        </ul>
+      </li>
+      <li class="has-info">
+        <a href="#">SLBS CUSTOM</a>
+        <ul>
+          <li><a href="#">HELLO KITTY</a></li>
+          <li><a href="#">HELVETICA</a></li>
+          <li><a href="#">THE SIMSONS</a></li>
+          <li><a href="#">STAR WARS</a></li>
+          <li><a href="#">MICKEY MOUSE</a></li>
+          <li><a href="#">COCA-COLA</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="site-info invisible opacity-0">
+      <div class="site-info--text">
+        SLASH B SLASH is the mobile fashion accessory brand with new tech. Fashion in tech becomes
+        more important than ever for people who want to express themselves.
+      </div>
+      <div class="site-info--logo">
+        <img
+          src="/web/upload/slbs/images/logo/logo-slbs-oval.png"
+          class="light"
+          alt="slbs tm"
+        /><img
+          src="/web/upload/slbs/images/logo/logo-slbs-oval-white.png"
+          class="dark hidden"
+          alt="slbs tm"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="navigation__util hidden">
+    <button type="button" class="menu btnSearch eSearch">검색</button>
+    <a href="/myshop/index.html" class="menu RW displaynone"> 마이쇼핑 </a>
+    <a href="/myshop/wish_list.html" class="menu RW displaynone"> 관심상품 </a>
+  </div>
+  <!--@js(/layout/basic/js/navigation.js)-->
+</div>

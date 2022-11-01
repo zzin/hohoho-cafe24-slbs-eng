@@ -1,0 +1,115 @@
+<!--@layout(/layout/basic/popup.html)-->
+<div module="Coupon_SelectNew" class="ec-base-layer">
+    <!--@css(/css/module/coupon/selectNew.css)-->
+    <div class="header">
+        <h1>Search/Apply Coupons</h1>
+    </div>
+
+    <div class="content">
+        <div class="ec-base-help">
+            <h2>About Coupons</h2>
+            <div class="inner">
+                <ul>
+                    <li>Only the valid coupons are listed here.</li>
+                    <li>Please note the actual price you pay for your order may vary depending on your membership level. Coupon discounts are calculated once your membership level discount is applied to your order total.</li>
+                    <li>Additional coupons can be added to your order regardless of any limit on the number of coupons used. You can use one extra product coupon and one extra checkout coupon.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="{$bPrdCoupon|display}">
+            <div class="title">
+                <h3>Apply Product Coupon</h3>
+            </div>
+            <div class="ec-base-table gLayoutFixed typeList">
+                <table border="1" summary="">
+                    <caption>Apply Product Coupon</caption>
+                    <colgroup>
+                        <col style="width:90px" />
+                        <col style="width:auto" />
+                        <col style="width:100px" />
+                        <col style="width:120px" />
+                        <col style="width:100px" />
+                        <col style="width:100px" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">Image</th>
+                            <th scope="col">Product Details</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Discount Benefit</th>
+                            <th scope="col">Select<br />Product Coupon</th>
+                            <th scope="col">Product Coupon<br />Discount</th>
+                        </tr>
+                    </thead>
+                    <tbody class="center">
+                        <tr module="Coupon_aPrd">
+                            <td class="thumb"><img src="{$product_image}" alt="" /></td>
+                            <td class="left txtBreak">
+                                <strong>{$product_name}</strong>
+                                <div class="option">{$sOptStr}</div>
+                                <div id="{$coupon_prd_hidden}" class="type">{$sHidden}</div>
+                            </td>
+                            <td class="price right"><strong>{$sOrdPrice}</strong></td>
+                            <td id="{$coupon_prd_total_sale_price}" class="right">{$sTotalMemberSalePrice}</td>
+                            <td class="select"><span id="{$coupon_prd_select}" class="txtInfo">{$sCoupon}</span></td>
+                            <td class="right"><strong>{$sCouponSaleSpan}</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="ec-base-table typeList total gBlank20">
+            <table border="1" summary="">
+                <caption>Total Discounted Amount from Coupon</caption>
+                <colgroup>
+                    <col style="width:33.33%" />
+                    <col style="width:33.33%" />
+                    <col style="width:33.33%" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col"><strong>Discount from Product Coupon</strong></th>
+                        <th scope="col"><strong>Discount from Purchase Coupon</strong></th>
+                        <th scope="col"><strong>Discount from Shipping Coupon</strong></th>
+                    </tr>
+                </thead>
+                <tfoot class="right">
+                    <tr>
+                        <td colspan="3"><strong>= Coupon Discounts</strong>({$mileage_name}) : <span class="txtEm gIndent10">{$price_unit_head}<strong id="{$total_coupon_discount_id}" class="txt23">0</strong><strong>{$price_unit_tail}</strong> (<img src="{$mileage_mileage_icon}" alt="" /> <span id="{$total_coupon_mileage_id}">0</span>)</span></td>
+                    </tr>
+                </tfoot>
+                <tbody class="center">
+                    <tr>
+                        <td><div class="box txt16">{$price_unit_head}<strong id="{$product_coupon_discount_id}" class="txt23">0</strong><strong>{$price_unit_tail}</strong> <span class="txt12 txtInfo">(<img src="{$mileage_mileage_icon}" alt="" /> <span id="{$product_coupon_mileage_id}">0</span>)</span></div></td>
+                        <td><div class="box txt16"><strong>- {$price_unit_head}<strong id="{$order_coupon_discount_id}" class="txt23">0</strong>{$price_unit_tail}</strong> <span class="txt12 txtInfo">(<img src="{$mileage_mileage_icon}" alt="" /> <span id="{$order_coupon_mileage_id}">0</span>)</span></div></td>
+                        <td><div class="box txt16"><strong>- {$price_unit_head}<strong id="{$ship_coupon_discount_id}" class="txt23">0</strong>{$price_unit_tail}</strong></div></td>
+                    </tr>
+                </tbody>
+                <tbody class="detail center">
+                    <tr>
+                        <td class="left">
+                            <ul id="{$selected_product_coupon_id}">
+                            </ul>
+                        </td>
+                        <td class="left">
+                            <ul id="{$selected_order_coupon_id}" class="select">
+                                <li>{$sOrdCoupon}</li>
+                            </ul>
+                        </td>
+                        <td class="left">
+                            <ul id="{$selected_ship_coupon_id}">
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="ec-base-button">
+        <a href="#none" onclick="{$action_result}" class="btnSubmit sizeS">Apply coupon</a>
+        <a href="#none" onclick="{$action_init}" class="btnNormal sizeS">Clear all</a>
+    </div>
+</div>
