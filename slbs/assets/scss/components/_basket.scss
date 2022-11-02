@@ -1,0 +1,111 @@
+.xans-order-basketpackage {
+  .cart-container {
+    @apply flex flex-col lg:flex-row;
+    @apply px-2.5 lg:px-5;
+    .cart-product,
+    .cart-total {
+      @apply relative mb-0 flex-1 pt-2.5 text-sm lg:pt-5 lg:text-base;
+      .title {
+        h3 {
+          @apply text-lg font-bold lg:text-xl;
+        }
+        &.subHead {
+          h4 {
+            @apply text-base font-bold;
+          }
+          @apply flex items-center justify-between border-t border-black py-3;
+        }
+      }
+    }
+    .cart-total {
+      @apply lg:ml-12;
+      .sticky {
+        @apply top-[116px];
+        @apply flex flex-col justify-between lg:h-[calc(100vh-116px)];
+      }
+      &::before {
+        @apply absolute -left-[25px] top-0 hidden h-full w-[1px] bg-black content-[''] lg:block;
+      }
+    }
+  }
+  .ec-base-prdEmpty {
+    .desc {
+      @apply mt-3 text-left font-normal text-black;
+    }
+  }
+  .xans-order-list {
+    @apply border-t border-black;
+    & > .xans-record- {
+      @apply border-b border-[#ddd];
+    }
+    .prdBox {
+      @apply relative py-4;
+      .thumbnail {
+        @apply w-36 lg:w-44;
+        img {
+          @apply h-auto w-full;
+        }
+      }
+      .description,
+      .quantityNPrice {
+        @apply absolute ml-40 w-[calc(100%-160px)] lg:ml-48 lg:w-[calc(100%-192px)];
+      }
+      .description {
+        @apply top-4 border-b border-black;
+        .option {
+          @apply py-2 text-xs text-black;
+        }
+      }
+      .quantityNPrice {
+        @apply bottom-4 flex items-center justify-between;
+      }
+      .basket-check {
+        @apply absolute left-0 top-4 lg:right-0 lg:left-auto;
+      }
+    }
+  }
+  .custom-checkbox {
+    @apply mr-0;
+  }
+  .order-selector {
+    @apply mt-3 flex justify-between;
+    .textBtn {
+      @apply text-sm underline;
+    }
+  }
+  .ec-base-button.justify {
+    @apply m-0 -mx-2.5 flex bg-pink-200 p-0 lg:-ml-[24px] lg:-mr-[20px];
+    & > a {
+      @apply m-0 h-[50px] flex-1 p-0 text-xl font-bold leading-[50px];
+      &:nth-child(2) {
+        @apply hidden;
+      }
+    }
+  }
+  #appPaymentButtonBox {
+    @apply m-0 hidden;
+  }
+  .totalSummary {
+    @apply border-t border-black;
+    & > li {
+      @apply flex justify-between py-3;
+      em {
+        @apply font-normal uppercase not-italic;
+      }
+      &.li-total {
+        @apply border-t border-black;
+        strong {
+          @apply text-[28px] lg:text-4xl;
+        }
+      }
+    }
+  }
+  .basket-guide {
+    @apply my-4;
+    & > ul {
+      & > li {
+        @apply text-xs;
+      }
+    }
+  }
+}

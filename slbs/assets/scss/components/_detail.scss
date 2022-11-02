@@ -70,8 +70,11 @@
             button {
               @apply rounded-none;
             }
+            .btnSubmit {
+              @apply px-0;
+            }
             .btnNormal {
-              @apply m-0 border-none;
+              @apply m-0 border-none bg-gray-100;
             }
           }
         }
@@ -88,9 +91,9 @@
         @apply m-0;
       }
       .ec-base-button {
-        @apply p-0;
+        @apply m-0 p-0;
         &[class*='gColumn'] [class^='btn'] {
-          @apply m-0 border-transparent bg-gray-200 font-bold;
+          @apply m-0 border-transparent bg-gray-100 font-bold;
           &.btnSubmit {
             @apply bg-black;
           }

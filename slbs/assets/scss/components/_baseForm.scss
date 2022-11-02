@@ -21,13 +21,13 @@
   }
 }
 .custom-checkbox {
-  @apply mr-2 h-[18px] w-[18px];
+  @apply relative mr-2 h-[18px] w-[18px];
   em.checkbox {
-    @apply relative h-[18px] w-[18px];
+    @apply absolute top-0 left-0 h-[18px] w-[18px];
     &::before,
     &::after {
       content: '';
-      @apply absolute top-0 left-0 h-full w-full border border-black;
+      @apply absolute top-0 left-0 h-[18px] w-[18px] border border-black;
     }
     &::after {
       @apply top-[4px] left-[4px] h-2.5 w-2.5 bg-black opacity-0;
