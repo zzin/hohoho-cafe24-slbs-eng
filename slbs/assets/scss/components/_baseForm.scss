@@ -1,0 +1,44 @@
+.ec-base-chk {
+  @apply h-[18px] w-[18px];
+  em.checkbox {
+    @apply h-[18px] w-[18px] bg-none;
+    &::before,
+    &::after {
+      content: '';
+      @apply absolute top-0 left-0 h-full w-full border border-black;
+    }
+    &::after {
+      @apply top-[4px] left-[4px] h-2.5 w-2.5 bg-black opacity-0;
+    }
+  }
+  input[type='checkbox'] {
+    @apply absolute z-10 h-[18px] w-[18px] opacity-0;
+    &:checked + em.checkbox {
+      &::after {
+        @apply opacity-100;
+      }
+    }
+  }
+}
+.custom-checkbox {
+  @apply mr-2 h-[18px] w-[18px];
+  em.checkbox {
+    @apply relative h-[18px] w-[18px];
+    &::before,
+    &::after {
+      content: '';
+      @apply absolute top-0 left-0 h-full w-full border border-black;
+    }
+    &::after {
+      @apply top-[4px] left-[4px] h-2.5 w-2.5 bg-black opacity-0;
+    }
+  }
+  input[type='checkbox'] {
+    @apply absolute z-10 h-[18px] w-[18px] opacity-0;
+    &:checked ~ em.checkbox {
+      &::after {
+        @apply opacity-100;
+      }
+    }
+  }
+}

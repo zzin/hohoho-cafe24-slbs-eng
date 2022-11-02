@@ -1,0 +1,105 @@
+.find-your-id-pw {
+  @apply p-2.5 lg:p-5;
+  .title {
+    @apply text-[28px] font-bold leading-tight lg:text-[52px];
+  }
+  .memberArea {
+    @apply mx-0 mt-5 lg:mt-10;
+  }
+  .ec-base-desc {
+    @apply flex flex-col;
+    & > li {
+      @apply mb-5 flex flex-col lg:flex-row lg:items-center;
+      &.checkbox {
+        @apply flex-row;
+      }
+      strong {
+        @apply mb-2 mr-0 w-auto min-w-[210px] font-bold uppercase lg:mb-0;
+      }
+      .desc {
+        @apply m-0 w-full p-0;
+        input[type='text'] {
+          @apply w-full;
+        }
+      }
+    }
+    input[type='radio'] + label,
+    input[type='checkbox'] + label {
+      @apply ml-1;
+    }
+  }
+  .ec-base-button {
+    &.gBottom {
+      @apply mt-2 lg:pl-[210px];
+      .btnNormalFix,
+      .btnSubmitFix {
+        @apply h-[50px] w-full appearance-none rounded-none p-0 text-xl font-bold leading-[50px];
+      }
+      .btnNormalFix {
+        @apply border-black;
+      }
+    }
+  }
+  .if-you-have {
+    @apply my-5 bg-[#f5f5f5] p-4 text-xs lg:mt-10 lg:ml-[210px];
+  }
+
+  /* 아이디 찾기 결과 보기 */
+  .xans-member-findidresult {
+    .complete {
+      @apply w-full text-left;
+    }
+    .list-result {
+      @apply lg:ml-[210px];
+    }
+  }
+  .ec-base-desc.gSmall dd,
+  .ec-base-desc.gSmall .desc {
+    @apply p-0;
+  }
+  &.id,
+  &.pw {
+    .ec-base-button.gBottom {
+      @apply flex gap-x-1;
+      a {
+        @apply flex-1;
+      }
+    }
+    .typeMember {
+      .headDesc,
+      .infoDesc {
+        @apply text-left uppercase;
+      }
+      .description {
+        @apply my-5;
+        .ec-base-desc {
+          @apply border-y border-black/40 py-4;
+          & > li {
+            @apply m-0 py-2;
+          }
+        }
+        .list-result {
+          @apply mt-5;
+        }
+      }
+    }
+  }
+  &.pw {
+    .findPw {
+      @apply my-5 w-full text-left lg:pl-[210px];
+      .desc {
+        @apply text-base uppercase text-black;
+      }
+    }
+    .desc-hint {
+      @apply mt-5 flex flex-col items-center border-y border-black/40 py-4 uppercase lg:flex-row;
+      strong,
+      span {
+        @apply w-full text-left;
+      }
+      strong {
+        @apply mb-2 block w-full lg:mb-0 lg:max-w-[210px];
+      }
+    }
+  }
+}

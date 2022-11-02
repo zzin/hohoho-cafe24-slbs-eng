@@ -1,5 +1,12 @@
 [class^='btn'],
 [class^='btnSubmit'],
 a[class^='btnSubmit'] {
-  @apply rounded-none text-xl uppercase;
+  @apply rounded-none text-xs uppercase leading-[0] lg:text-xl;
+  &:hover {
+    @apply bg-black;
+  }
+}
+
+[class^='btnSubmit']:not(.disabled):hover {
+  @apply bg-black;
 }

@@ -1,32 +1,110 @@
 <!--@layout(/layout/basic/layout.html)-->
-<div class="path">
-    <span>Current Page</span>
-    <ol>
-        <li><a href="/">Home</a></li>
-        <li title="Current Page"><strong>Forgot ID</strong></li>
-    </ol>
-</div>
-
-<div class="titleArea">
-    <h2>Forgot ID</h2>
-    <p>Please provide your name and email address to find your ID.</p>
-</div>
-
-<div module="member_findid" class="ec-base-box typeThin">
-    <!--@css(/css/module/member/find_id.css)-->
-    <!--
-        $returnURL = /member/id/find_id_result.html
-     -->
-    <div class="findId">
-        <h3 class="boxTitle">Forgot ID</h3>
-        <fieldset>
-            <legend>Forgot ID</legend>
-            <p class="check displaynone">{$form.check_method}</p>
-            <p id="name_view" class="name"><strong id="name_lable">Name</strong> {$form.name}</p>
-            <p id="email_view" class="email" style="display:none;"><strong>Enter Email Address</strong> {$form.email}</p>
-            <div class="ec-base-button gColumn">
-                <a href="#none" class="btnSubmit sizeM" onclick="{$action_func_find_id}">Submit</a>
-            </div>
-        </fieldset>
+<div class="find-your-id-pw">
+  <div class="grid grid-cols-2">
+    <div class="col-span-2 lg:col-span-1">
+      <h2 class="title">FIND YOUR ID</h2>
+      <div module="member_findid" class="memberArea gInnerMargin">
+        <!--
+          $returnURL = /member/id/find_id_result.html
+        -->
+        <div class="typeMember">
+          <fieldset class="content">
+            <legend>아이디 찾기</legend>
+            <ul class="ec-base-desc gVer">
+              <li style="display: none">
+                <strong>회원유형</strong>
+                <div class="desc">
+                  {$form.searchType}
+                  <div class="check gBlank10">{$form.check_method}</div>
+                </div>
+              </li>
+              <li class="checkbox">
+                <strong>Authentication</strong>
+                <div class="desc">
+                  <input type="checkbox" id="chk-email" name="chk-email" checked />
+                  <label for="chk-email">E-MAIL</label>
+                </div>
+              </li>
+              <li id="name_view" class="name">
+                <strong id="name_lable_">NAME</strong>
+                <strong class="hidden" id="name_lable">NAME</strong>
+                <div class="desc">{$form.name}</div>
+              </li>
+              <li id="ssn_view" class="ssn_no" style="display: none">
+                <strong id="ssn_name">법인번호로 찾기</strong>
+                <div class="desc">
+                  <span class="ec-base-field code">{$form.ssn1} - {$form.ssn2}</span>
+                </div>
+              </li>
+              <li id="email_view" class="email" style="display: none">
+                <strong>E-MAIL</strong>
+                <div class="desc">{$form.email}</div>
+              </li>
+              <li id="mobile_view" class="mobile" style="display: none">
+                <strong>PHONE NUMBER</strong>
+                <div class="desc">
+                  <span class="ec-base-field code"
+                    >{$form.mobile1} - {$form.mobile2} - {$form.mobile3}</span
+                  >
+                </div>
+              </li>
+              <li id="ipin_view" class="ipin" style="display: none">
+                <strong>아이핀인증으로 찾기</strong>
+                <div class="desc">
+                  <p class="info">
+                    회원가입을 아이핀으로 가입하신 회원님께서는 아이핀으로 인증하세요.
+                  </p>
+                  <a href="#none" class="btnNormal sizeS gBlank10" onclick="{$action_func_find_id}"
+                    >아이핀인증</a
+                  >
+                </div>
+              </li>
+              <li id="mobile_auth_view" class="mobileauth" style="display: none">
+                <strong>휴대폰인증으로 찾기</strong>
+                <div class="desc">
+                  <p class="info">
+                    본인 명의의 휴대폰으로 아이디 찾기를 진행할 수 있습니다. <br />휴대폰 명의자의
+                    정보로 가입한 아이디 찾기가 가능합니다.
+                  </p>
+                  <a href="#none" class="btnNormal sizeS gBlank10" onclick="{$action_func_find_id}"
+                    >휴대폰 인증</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </fieldset>
+        </div>
+        <div class="ec-base-button gBottom">
+          <a href="#none" class="btnSubmitFix sizeM w-full w-full" onclick="{$action_func_find_id}"
+            >FIND ID</a
+          >
+        </div>
+        <div class="if-you-have">
+          <strong>If you have a problem, check here.</strong>
+          <div>
+            1/ You can find your ID through the e-mail you have entered during your membership
+            application.<br />
+            2/ If you have other inquiries, please contact the customer service(1577-6060).
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
+<script type="text/javascript">
+  (function () {
+    'use strict';
+    const chkEmail = document.getElementById('chk-email');
+    const checkMethod1 = document.getElementById('check_method1');
+    const checkMethod2 = document.getElementById('check_method2');
+    chkEmail.addEventListener('click', function (e) {
+      if (e.target.checked) {
+        //true
+        checkMethod1.click();
+      } else {
+        //false
+        checkMethod2.click();
+      }
+    });
+  })();
+</script>

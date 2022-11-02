@@ -1,0 +1,164 @@
+.sign-wrap {
+  @apply p-2.5 pb-5 lg:p-5;
+  h2.title {
+    @apply text-lg font-bold lg:text-xl;
+  }
+  // .ec-base-chk {
+  //   em.checkbox {
+  //     @apply hidden;
+  //   }
+  // }
+  .gInnerMargin {
+    @apply m-0;
+    .agreeAll,
+    .contents-wrap {
+      @apply mb-5 flex flex-col lg:flex-row;
+      h3,
+      strong {
+        @apply mb-2 min-w-[210px] text-base font-bold uppercase lg:mb-0;
+      }
+    }
+    .contents-wrap {
+      .desc {
+        @apply text-base;
+        .custom-checkbox {
+          @apply flex items-center;
+          input[type='checkbox'] + label {
+            @apply hidden;
+          }
+          input[type='checkbox'] + label + label {
+            @apply ml-0;
+          }
+        }
+      }
+    }
+  }
+  .ec-base-button.gBottom {
+    @apply mx-0 mt-5 lg:mt-7 lg:ml-[210px];
+    [class^='btn'] {
+      @apply ml-0 w-full bg-black p-0 text-sm leading-[0] lg:text-xl;
+    }
+  }
+  .agreeArea {
+    h3 {
+      label {
+        @apply font-bold;
+      }
+    }
+    .additional {
+      @apply flex;
+      li {
+        @apply flex-1;
+      }
+      input[type='checkbox'] {
+        & + label {
+          @apply hidden;
+          & + label {
+            @apply m-0;
+          }
+        }
+      }
+    }
+  }
+  // join.html
+  &.join {
+    .ec-base-table {
+      @apply border-t-0 p-0;
+      table {
+        @apply border-0 border-none;
+        &::before {
+          @apply hidden;
+        }
+        tbody {
+          @apply block lg:table-row-group;
+          tr {
+            @apply block lg:table-row;
+            th {
+              @apply border-none;
+            }
+            th,
+            td {
+              @apply block lg:table-cell;
+            }
+          }
+        }
+      }
+      &.typeWrite {
+        th[scope*='row'] {
+          @apply border-b-0 bg-transparent p-0 pb-1 align-top font-bold uppercase lg:pb-0 lg:pt-3;
+        }
+        td {
+          @apply border-0 p-0 pb-5;
+          input[type='text'],
+          input[type='password'] {
+            @apply w-full;
+            & + span {
+              @apply mt-1 block text-xs text-black/40;
+              &.error {
+                @apply text-red-500;
+              }
+            }
+          }
+        }
+      }
+      span.txtInfo {
+        @apply ml-0 mt-1 block;
+      }
+      p.txtInfo,
+      ul.txtInfo {
+        @apply m-0;
+      }
+    }
+    .ec-base-button {
+      @apply m-0 lg:pl-[210px];
+      .btnSubmitFix {
+        @apply h-[50px] w-full p-0 text-xl leading-[50px];
+      }
+    }
+    .xans-member-join {
+      .eTooltip {
+        @apply block w-full;
+      }
+      .password-type-desc {
+        @apply mt-1 text-xs text-black/40;
+      }
+    }
+  }
+  // join_result.html
+  &.join-result {
+    @apply relative mb-1 flex min-h-[calc(100vh-96px-58px)] items-center justify-center overflow-hidden;
+    .bg {
+      @apply absolute inset-0 bg-contain bg-center bg-no-repeat;
+      @media (max-width: 1024px) {
+        background-size: 120%;
+      }
+      @media (max-width: 768px) {
+        background-size: 160%;
+      }
+    }
+    .innder-content {
+      @apply z-10 flex flex-col items-center justify-around self-stretch text-center text-white;
+      .t {
+        img {
+          @apply mx-auto mb-3 max-h-10 w-auto lg:max-h-12;
+        }
+        strong {
+          @apply text-center text-base lg:text-[22px];
+        }
+      }
+      .m {
+        h2 {
+          @apply text-2xl font-bold lg:text-5xl;
+        }
+        strong {
+          @apply text-base lg:text-[22px];
+        }
+      }
+      .b {
+        a {
+          @apply text-base font-bold text-white underline lg:text-[22px];
+        }
+      }
+    }
+  }
+}

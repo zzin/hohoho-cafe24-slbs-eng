@@ -36,3 +36,7 @@ body {
 #contents {
   @apply float-none w-full lg:min-h-[700px];
 }
+
+.box-scroll {
+  @apply h-40 w-full overflow-scroll border border-black/30 p-3;
+}

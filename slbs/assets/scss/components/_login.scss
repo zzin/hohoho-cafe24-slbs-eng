@@ -117,6 +117,10 @@
       @apply bg-black;
     }
   }
+  [class^='btn'].sizeL,
+  .btnSubmit.gFull {
+    @apply p-2.5 text-xl;
+  }
 }
 
 // .xans-myshop-orderhistorynologin input[type=text], .xans-myshop-orderhistorynologin input[type=password]
