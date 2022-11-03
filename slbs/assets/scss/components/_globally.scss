@@ -1,8 +1,13 @@
 body {
   @apply min-w-full max-w-full font-sans text-black;
-  &[data-body='normal'] {
+  &[data-body='normal'],
+  &[data-body='order-result'] {
     @apply pt-[72px] text-base text-black lg:pt-[96px];
     letter-spacing: 0em;
+  }
+  &[data-body='order'],
+  &[data-body='order-result'] {
+    @apply pt-[112px] lg:pt-[146px];
   }
   .dimmed {
     @apply hidden bg-black/30;
@@ -39,4 +44,15 @@ body {
 
 .box-scroll {
   @apply h-40 w-full overflow-scroll border border-black/30 p-3;
+}
+
+.wideContainer {
+  @apply grid grid-cols-1 lg:grid-cols-2;
+  &--left,
+  &--right {
+    @apply p-2.5 lg:p-5;
+  }
+  &--left {
+    @apply border-black lg:border-r;
+  }
 }

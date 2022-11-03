@@ -213,6 +213,9 @@
 }
 
 #totalProducts {
+  table {
+    @apply block;
+  }
   @apply mt-5 border-t border-black px-2.5 pt-2.5 lg:px-5 lg:pt-0;
   thead {
     @apply hidden;
