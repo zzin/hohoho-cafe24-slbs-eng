@@ -25,11 +25,11 @@
       <div class="flex py-2">
         <div class="stateSelect {$status_bar_display|display}">{$form.order_status}</div>
         <span class="period">
-          <a href="#none" class="btnNormal" days="00">TODAY</a>
-          <a href="#none" class="btnNormal" days="07">1 WEEK</a>
-          <a href="#none" class="btnNormal" days="30">1 MONTH</a>
-          <a href="#none" class="btnNormal" days="90">3 MONTHS</a>
-          <a href="#none" class="btnNormal" days="180">6 MONTHS</a>
+          <a href="#none" class="btnNormal {$now_style}" days="00">TODAY</a>
+          <a href="#none" class="btnNormal {$search_style}" days="07">1 WEEK</a>
+          <a href="#none" class="btnNormal {$month_style}" days="30">1 MONTH</a>
+          <a href="#none" class="btnNormal {$three_style}" days="90">3 MONTHS</a>
+          <a href="#none" class="btnNormal {$six_style}" days="180">6 MONTHS</a>
         </span>
       </div>
       <div class="flex-next flex py-2">
@@ -47,24 +47,13 @@
         />
       </div>
     </fieldset>
-    <ul>
-      <li class="{$is_past_list_none_display|display}">
-        Your order history for the last three months is listed by default. You can look up your
-        order history by selecting the time period.
+    <h3 class="ul-title">order history Guidance</h3>
+    <ul class="ul-default">
+      <li>
+        1/You can check order history of orders that have been fulfilled over 24 months ago in Order
+        history tab.
       </li>
-      <li class="{$is_past_list_display|display}">
-        By default, results are shown for the past three months. You can also view the order history
-        of orders that have been fulfilled over the past 36 months by adjusting the date range.
-      </li>
-      <li class="{$is_past_list_display|display}">
-        You can check order history of orders that have been fulfilled over 36 months ago in
-        <a href="javascript:OrderHistory.searchPast(false)">[Archived Orders]</a> tab.
-      </li>
-      <li>Click on the order number to view order details.</li>
-      <li class="{$cs_request_guide_display|display}">
-        Cancel/Exchange/Return request can be accepted within {$cs_request_period_day} days
-        {$cs_request_period_day_condition}.
-      </li>
+      <li>2/Click on the order number to view order details.</li>
     </ul>
   </div>
 </div>

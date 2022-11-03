@@ -54,7 +54,7 @@ body[data-body='order-result'] {
 
   .ec-base-prdInfo {
     .prdBox {
-      @apply flex;
+      @apply mb-2 flex;
       .thumbnail {
         a {
           img {

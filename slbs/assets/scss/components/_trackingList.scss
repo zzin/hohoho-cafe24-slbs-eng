@@ -1,0 +1,64 @@
+.xans-myshop-orderhistorylistitem {
+  @apply mt-5 lg:mt-10;
+  .orderList {
+    .order.xans-record- {
+      @apply relative -mt-[1px] border-b border-black;
+      .order__number {
+        @apply border-y border-black py-4 text-base font-bold;
+      }
+      .btnDetail {
+        @apply absolute right-0 top-4 flex items-center text-base font-normal;
+      }
+      .ec-base-prdInfo {
+        @apply py-2.5;
+        .prdBox {
+          @apply flex;
+          .thumbnail {
+            @apply mr-2 lg:mr-3;
+            a {
+              img {
+                @apply h-auto w-36;
+              }
+            }
+          }
+          .description-wrap {
+            @apply flex-1 text-sm lg:text-xl;
+            strong {
+              @apply font-normal;
+            }
+            .prdFoot {
+              @apply mt-4 uppercase;
+              .gRight {
+                @apply mt-2 flex gap-1;
+              }
+            }
+            .ec-base-button {
+              @apply m-0;
+              .gRight {
+                @apply mt-2 flex gap-1;
+              }
+            }
+            .gRight {
+              @apply flex-col md:flex-row;
+              .sizeM,
+              .sizeS {
+                @apply w-full flex-initial md:w-auto;
+              }
+            }
+          }
+        }
+      }
+    }
+    [class^='btn'].sizeS,
+    [class^='btn'][class*='Fix'].sizeM {
+      @apply m-0 h-auto w-auto min-w-0 whitespace-nowrap rounded-none border-0 bg-black px-3 py-1.5 font-sans text-xs font-bold tracking-normal text-white;
+    }
+    [class^='btn'].sizeS {
+      @apply border border-black bg-white text-black;
+    }
+  }
+}
+
+.ec-base-prdEmpty {
+  @apply border-y border-black py-10 text-center uppercase lg:text-xl;
+}
