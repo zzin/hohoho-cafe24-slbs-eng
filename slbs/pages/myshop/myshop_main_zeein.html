@@ -1,0 +1,17 @@
+<div id="myshopMain" module="myshop_main" data-component="navbar">
+  <ul class="ul-nav-myshop">
+    <li class="item"><a class="link" href="/myshop/order/list.html">TRACK ORDERS</a></li>
+    <li class="item"><a class="link" href="/myshop/wish_list.html">WISHLIST</a></li>
+    <li class="item {$board_display|display}">
+      <a class="link" href="/myshop/board_list.html">REVIEW</a>
+    </li>
+    <li class="item {$coupon_display|display}">
+      <a class="link" href="/myshop/coupon/coupon.html">COUPON</a>
+    </li>
+    <li class="item">
+      <a class="link" href="/myshop/mileage/historyList.html">{$mileage_name}</a>
+    </li>
+    <li class="item"><a class="link" href="/member/modify.html">MY ACCOUNT</a></li>
+  </ul>
+</div>
+<!--@js(/slbs/assets/js/myshop/zMyshop.js)-->

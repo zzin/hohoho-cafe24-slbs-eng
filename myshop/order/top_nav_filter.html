@@ -1,0 +1,70 @@
+<div module="Myshop_OrderHistoryTab" class="ec-base-tab">
+  <ul class="menu">
+    <li class="{$tab_class}">
+      <a href="/myshop/order/list.html{$param}">Order History ({$total_orders})</a>
+    </li>
+    <li class="{$tab_class_cs}">
+      <a href="/myshop/order/list.html{$param_cs}"
+        >Cancellations•Returns•Exchanges ({$total_orders_cs})</a
+      >
+    </li>
+    <li class="{$tab_class_past} {$is_past_list_display|display}">
+      <a href="/myshop/order/list_past.html{$param_past}">Archived Orders ({$total_orders_past})</a>
+    </li>
+    <li class="{$tab_class_old} {$old_list_display|display}">
+      <a href="/myshop/order/list_old.html{$param_old}">Transferred Orders ({$total_orders_old})</a>
+    </li>
+  </ul>
+</div>
+
+<div class="hidden lg:block">
+  <div module="Myshop_OrderHistoryHead">
+    <!--@css(/css/module/myshop/orderHistoryHead.css)-->
+    <fieldset class="ec-base-box">
+      <legend>Time Period</legend>
+      <div class="flex py-2">
+        <div class="stateSelect {$status_bar_display|display}">{$form.order_status}</div>
+        <span class="period">
+          <a href="#none" class="btnNormal" days="00">TODAY</a>
+          <a href="#none" class="btnNormal" days="07">1 WEEK</a>
+          <a href="#none" class="btnNormal" days="30">1 MONTH</a>
+          <a href="#none" class="btnNormal" days="90">3 MONTHS</a>
+          <a href="#none" class="btnNormal" days="180">6 MONTHS</a>
+        </span>
+      </div>
+      <div class="flex-next flex py-2">
+        <div class="need-space ml-4 flex items-center">
+          <div class="relative">{$form.start_date}</div>
+          &nbsp;~&nbsp;
+          <div class="relative">{$form.end_date}</div>
+        </div>
+
+        <input
+          alt="Search"
+          id="order_search_btn"
+          type="image"
+          src="//zeein81.cafe24.com/web/upload/slbs/images/myshop/btn-filter-search.png"
+        />
+      </div>
+    </fieldset>
+    <ul>
+      <li class="{$is_past_list_none_display|display}">
+        Your order history for the last three months is listed by default. You can look up your
+        order history by selecting the time period.
+      </li>
+      <li class="{$is_past_list_display|display}">
+        By default, results are shown for the past three months. You can also view the order history
+        of orders that have been fulfilled over the past 36 months by adjusting the date range.
+      </li>
+      <li class="{$is_past_list_display|display}">
+        You can check order history of orders that have been fulfilled over 36 months ago in
+        <a href="javascript:OrderHistory.searchPast(false)">[Archived Orders]</a> tab.
+      </li>
+      <li>Click on the order number to view order details.</li>
+      <li class="{$cs_request_guide_display|display}">
+        Cancel/Exchange/Return request can be accepted within {$cs_request_period_day} days
+        {$cs_request_period_day_condition}.
+      </li>
+    </ul>
+  </div>
+</div>

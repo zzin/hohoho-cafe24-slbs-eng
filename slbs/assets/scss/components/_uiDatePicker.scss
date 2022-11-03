@@ -1,0 +1,66 @@
+.ui-datepicker.ui-widget-content {
+  @apply font-sans;
+  @apply -mt-[1px] rounded-none border border-black bg-white p-5;
+  .ui-datepicker-header {
+    @apply relative h-8 rounded-none border-0 border-b border-black bg-white bg-none p-0 text-base font-normal uppercase;
+    .ui-corner-all {
+      &.ui-datepicker-prev,
+      &.ui-datepicker-next {
+        @apply top-0 opacity-50;
+        &.ui-state-hover {
+          @apply border-0 bg-white bg-none opacity-100;
+        }
+      }
+      &.ui-datepicker-prev {
+        @apply left-auto right-8;
+      }
+      span.ui-icon {
+        @apply h-4 w-4 bg-cover bg-center bg-no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' class='w-5 h-5'%3E%3Cpath fill-rule='evenodd' d='M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z' clip-rule='evenodd' /%3E%3C/svg%3E%0A");
+        &.ui-icon-circle-triangle-e {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' class='w-5 h-5'%3E%3Cpath fill-rule='evenodd' d='M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z' clip-rule='evenodd' /%3E%3C/svg%3E%0A");
+        }
+      }
+    }
+    .ui-datepicker-title {
+      @apply absolute left-0 m-0 text-base font-normal text-black;
+    }
+  }
+  .ui-datepicker-calendar {
+    @apply text-base text-black;
+    thead {
+      tr {
+        th {
+          @apply py-1 text-[10px] font-normal uppercase text-[#999];
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          a {
+            @apply text-center;
+          }
+          .ui-state-default {
+            @apply border-0 bg-white bg-none text-base text-black/60;
+            &.ui-state-highlight {
+              @apply text-black;
+            }
+            &.ui-state-active {
+              @apply bg-slate-200 font-bold text-black;
+            }
+          }
+        }
+      }
+    }
+  }
+  .ui-datepicker-buttonpane {
+    @apply border-t border-black;
+    button {
+      @apply font-sans;
+      @apply m-0 mt-1 rounded-none border border-black bg-white bg-none text-sm font-bold uppercase text-black;
+    }
+  }
+}
+
+// .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default

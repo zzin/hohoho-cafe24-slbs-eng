@@ -1,0 +1,137 @@
+.xans-myshop-main {
+  @apply relative top-0 mt-0 w-full lg:block lg:p-5 xl:w-[85%];
+}
+.ul-nav-myshop {
+  @apply flex flex-col border-black lg:flex-row lg:border;
+  .item {
+    @apply flex-1 border-b border-black pl-2.5 lg:border-0 lg:pl-0 lg:text-center;
+    &:not(:last-child) {
+      @apply border-black lg:border-r;
+    }
+    .link {
+      @apply block py-2 text-[22px] hover:no-underline lg:py-3 lg:text-base;
+    }
+    &.is-active {
+      @apply bg-black text-white;
+      a {
+        @apply text-white;
+      }
+    }
+  }
+}
+
+.myshopOrderList {
+  .myshopArea {
+    @apply mt-0 p-2.5 lg:p-5;
+  }
+  .ec-base-tab {
+    @apply m-0;
+  }
+}
+
+.myshopMain {
+  @apply p-2.5 lg:p-5 xl:w-[85%];
+  .xans-myshop-asyncbankbook {
+    @apply border-black lg:border-0;
+    ul {
+      @apply flex flex-row border border-black lg:flex-col lg:border-none;
+      li {
+        @apply flex flex-1 flex-col items-center justify-between border-black py-2 lg:flex-row lg:border-0 lg:text-left;
+        &:not(:last-child) {
+          @apply border-r border-black lg:border-r-0;
+        }
+        strong {
+          @apply flex min-h-[32px] items-center justify-center px-0 text-center text-xs font-normal lg:min-h-full lg:min-w-[180px] lg:justify-start lg:text-base lg:font-bold;
+        }
+        span {
+          @apply block w-full border-t border-black pt-2 text-center text-xl font-bold lg:inline-block lg:w-auto lg:border-0 lg:pt-0 lg:text-right lg:text-2xl;
+        }
+      }
+    }
+  }
+  .xans-myshop-orderstate {
+    ul {
+      li {
+        @apply flex flex-col justify-between py-2 text-center lg:py-5;
+        strong {
+          @apply flex min-h-[32px] items-center justify-center px-1 text-xs font-normal lg:text-base;
+        }
+        span {
+          @apply mt-2 pt-2 text-xl font-bold lg:text-2xl;
+        }
+        a {
+          @apply mt-2 block border-t border-black pt-2 lg:border-t-0 lg:pt-0;
+        }
+      }
+    }
+  }
+}
+
+.xans-myshop-orderhistorytab {
+  @apply mb-4 hidden lg:block;
+  ul.menu {
+    @apply m-0 border-0 bg-white p-0;
+    li {
+      @apply border-0 bg-white;
+      a {
+        @apply m-0 mr-4 inline-block min-w-0 border-0 bg-white p-0 text-base uppercase text-black;
+      }
+      &.selected {
+        @apply border-0 bg-white;
+        a {
+          @apply top-0 m-0 mr-4 border-0 bg-white text-black;
+        }
+      }
+    }
+  }
+}
+#OrderHistoryForm {
+  .ec-base-box {
+    @apply inline-flex border-0 bg-[#f5f5f5] py-3 px-5 text-black;
+    @media (max-width: 1220px) {
+      @apply flex-wrap;
+      .need-space {
+        @apply ml-0;
+      }
+    }
+    .period {
+      @apply inline-flex items-center border-y border-l border-black;
+      a {
+        @apply inline-block h-[38px] whitespace-nowrap rounded-none border-r border-solid border-black px-3 text-xs leading-[40px] text-black;
+        margin: 0 !important;
+        &::last-child {
+          @apply border-r-0;
+        }
+        &:hover {
+          @apply bg-white;
+        }
+      }
+    }
+  }
+  .stateSelect {
+    @apply bg-none;
+    .fSelect {
+      @apply h-10 border border-black pl-1 text-base font-bold uppercase;
+      background-image: url('/web/upload/slbs/images/global/select-plus.png');
+      background-size: 20px 20px;
+      background-position: center right 4px;
+    }
+  }
+  .xans-myshop-orderhistoryhead {
+    fieldset {
+      .fText {
+        @apply h-[40px] w-[135px] border border-black bg-white pr-8 pl-2 text-base;
+      }
+      button.ui-datepicker-trigger {
+        @apply absolute right-1 top-1/2 block h-5 w-5 -translate-y-1/2 overflow-hidden bg-contain bg-center bg-no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' xmlns:serif='http://www.serif.com/' style='fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;'%3E%3Cpath d='M13.6,4.6l0,-0.6l-1.2,-0l0,0.6l-1.8,-0l0,-0.6l-1.2,-0l0,0.6l-1.8,-0l-0,-0.6l-1.2,-0l0,0.6l-2.4,-0l0,11.4l12,0l0,-11.4l-2.4,0Zm1.2,10.2l-9.6,0l0,-6l9.6,0l0,6Zm-9.6,-7.2l0,-1.8l1.2,-0l0,0.6l1.2,0l0,-0.6l1.8,-0l0,0.6l1.2,0l0,-0.6l1.8,-0l0,0.6l1.2,0l0,-0.6l1.2,-0l0,1.8l-9.6,-0Z' style='fill-rule:nonzero;'/%3E%3Crect x='6.4' y='10' width='1.2' height='1.2' style='fill-rule:nonzero;'/%3E%3Crect x='6.4' y='12.4' width='1.2' height='1.2' style='fill-rule:nonzero;'/%3E%3Crect x='9.4' y='12.4' width='1.2' height='1.2' style='fill-rule:nonzero;'/%3E%3Crect x='12.4' y='12.4' width='1.2' height='1.2' style='fill-rule:nonzero;'/%3E%3Crect x='9.4' y='10' width='1.2' height='1.2' style='fill-rule:nonzero;'/%3E%3Crect x='12.4' y='10' width='1.2' height='1.2' style='fill-rule:nonzero;'/%3E%3C/svg%3E");
+        img {
+          @apply hidden;
+        }
+      }
+      input[type='image'] {
+        @apply ml-5 h-10 w-auto;
+      }
+    }
+  }
+}

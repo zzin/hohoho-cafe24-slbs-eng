@@ -1,0 +1,9 @@
+input[type='button'],
+input[type='text'],
+input[type='password'],
+input[type='tel'],
+input[type='image'],
+textarea,
+select {
+  @apply text-base;
+}

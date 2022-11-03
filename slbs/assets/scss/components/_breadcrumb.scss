@@ -6,4 +6,9 @@
       @apply not-italic opacity-30;
     }
   }
+  &.has-next-margin {
+    & + div {
+      @apply mt-10 lg:mt-[50px];
+    }
+  }
 }
