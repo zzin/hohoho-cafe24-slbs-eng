@@ -239,6 +239,39 @@ body[data-body='order'] {
         }
       }
     }
+    #ec-jigsaw-area-discount {
+      @apply mt-12 lg:mt-20;
+      .discountDetail {
+        @apply border-b border-black px-0 uppercase;
+        .summary {
+          @apply text-black;
+          .txtEm {
+            @apply font-bold text-black;
+          }
+        }
+        .control {
+          @apply h-8 pr-[120px];
+          .txtEm {
+            @apply text-xl text-black;
+          }
+          .btnNormal {
+            @apply h-[40px] border-black text-xs leading-[40px] text-black;
+          }
+          .inputTypeText {
+            @apply text-black;
+          }
+        }
+        & + .totalPay {
+          @apply border-t border-black bg-white px-0 text-base uppercase;
+          .txtEm {
+            @apply text-xl font-bold text-black;
+          }
+        }
+        .ec-base-help {
+          @apply border-t-0 border-none;
+        }
+      }
+    }
   }
   #ec-jigsaw-area-agreement,
   #ec-jigsaw-area-benefit,
@@ -313,7 +346,7 @@ body[data-body='order'] {
         @apply right-0;
         .btnNormal,
         .btnBase {
-          @apply rounded-none border-black text-xs;
+          @apply h-[40px] rounded-none border-black text-xs leading-[40px];
         }
         .btnBase {
           @apply bg-black text-white;
@@ -329,6 +362,7 @@ body[data-body='order'] {
       @apply uppercase text-black;
     }
     .shippingList {
+      @apply w-full;
       & > li {
         @apply border-solid;
       }

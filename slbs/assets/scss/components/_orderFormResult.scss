@@ -21,6 +21,26 @@ body[data-body='order-result'] {
           th {
             @apply font-bold uppercase;
           }
+          &.discountArea {
+            .ec-base-box {
+              @apply relative border-0 border-y border-black px-0;
+              strong {
+                @apply uppercase text-black;
+              }
+              table {
+                tbody {
+                  tr {
+                    th {
+                      @apply font-normal;
+                    }
+                  }
+                }
+              }
+              & + .ec-base-box {
+                @apply -mt-[1px];
+              }
+            }
+          }
         }
       }
     }

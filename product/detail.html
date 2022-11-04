@@ -36,6 +36,19 @@
           {$aAddImage}
         </ul>
       </div>
+      <span
+        module="product_action"
+        id="{$fixed_action_button}"
+        class="productAction block lg:hidden"
+      >
+        <button
+          type="button"
+          class="actionWish"
+          onclick="{$action_wishlist}"
+          id="actionWish"
+          alt="위시리스트"
+        ></button>
+      </span>
     </div>
     <div class="infoArea">
       <div class="infoArea--wrap">
@@ -51,7 +64,11 @@
               </button>
             </h1>
 
-            <span module="product_action" id="{$fixed_action_button}" class="productAction">
+            <span
+              module="product_action"
+              id="{$fixed_action_button}"
+              class="productAction hidden lg:block"
+            >
               <button
                 type="button"
                 class="actionWish"

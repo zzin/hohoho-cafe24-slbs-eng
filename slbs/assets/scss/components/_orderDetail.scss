@@ -1,7 +1,22 @@
 .xans-myshop-orderhistorydetail {
+  .wideContainer--right {
+    @apply pb-0;
+    .ec-base-button {
+      @apply m-0 mt-4 p-0;
+      .btn-wrap {
+        @apply -mx-2.5 lg:-mx-5;
+      }
+      .btnSubmitFix {
+        @apply h-[50px] w-full p-0 text-xl leading-[50px];
+      }
+    }
+  }
   .orderArea {
-    & + .orderArea {
+    & + .orderArea:not(.no-need-margin-top) {
       @apply mt-10 lg:mt-20;
+    }
+    .customer {
+      @apply border-0 p-0 text-xs text-black lg:text-sm;
     }
   }
   .title {
@@ -32,6 +47,52 @@
         }
       }
     }
+    &.table-billing {
+      table {
+        @apply block;
+        tbody {
+          @apply block;
+          tr {
+            @apply flex w-full flex-row items-center justify-between;
+            th,
+            td {
+              @apply border-0 bg-white py-1 px-0 font-normal text-black;
+              .cost {
+                @apply text-base font-bold text-black lg:text-xl;
+                &.final {
+                  @apply text-[28px] lg:text-4xl;
+                }
+              }
+            }
+            &.sum {
+              @apply relative;
+              th {
+                @apply font-bold;
+              }
+              &::after {
+                content: '';
+                @apply absolute left-0 bottom-0 h-[1px] w-full bg-black;
+              }
+            }
+          }
+        }
+      }
+      ul.ul-default {
+        li {
+          @apply flex justify-between py-1.5;
+          .term,
+          .desc {
+            @apply text-black;
+          }
+          .term {
+            @apply whitespace-nowrap uppercase;
+          }
+          .desc {
+            @apply m-0 p-0;
+          }
+        }
+      }
+    }
     &.table-box {
       table {
         tbody {
@@ -41,11 +102,17 @@
             }
             td {
               span {
-                @apply block h-[40px] border border-black/30 py-2 px-1;
+                @apply block min-h-[40px] border border-black/30 py-2 px-1;
               }
             }
           }
         }
+      }
+    }
+    .btnNormal {
+      @apply h-[28px] border border-black p-0 px-2 text-xs font-bold uppercase leading-[28px];
+      &.black {
+        @apply bg-black text-white;
       }
     }
   }

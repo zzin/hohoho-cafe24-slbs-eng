@@ -3,7 +3,6 @@
   <h2>MY PAGE <i class="icon icon--read"></i> TRACK ORDERS</h2>
 </div>
 <div class="empty"></div>
-
 <div module="MyShop_OrderHistoryDetail" unroll="1">
   <!--@css(/css/module/myshop/orderHistoryDetail.css)-->
   <!--
@@ -48,10 +47,14 @@
               <tr>
                 <th scope="row">Order Status</th>
                 <td>
-                  {$order.state}
-                  <button type="submit" class="btnNormal {$cancel_display|display}">
-                    Cancel Order
-                  </button>
+                  <div class="flex items-center justify-between">
+                    {$order.state}
+                    <div>
+                      <button type="submit" class="btnNormal black {$cancel_display|display}">
+                        Cancel Order
+                      </button>
+                    </div>
+                  </div>
                 </td>
               </tr>
             </tbody>
@@ -1313,145 +1316,149 @@
       </div>
     </div>
     <div class="wideContainer--right">
-      <!-- Product Details -->
-      <div class="orderArea {$order.product_price_display|display}">
-        <div class="title">
-          <h3>Product Details</h3>
-        </div>
-        <div class="ec-base-table typeList">
-          <div module="Myshop_OrderHistoryDetailOversea">
-            <div class="ec-base-prdInfo">
-              <div class="prdBox">
-                <div class="thumbnail">
-                  <a href="/product/detail.html{$param_product}"
-                    ><img
-                      src="{$thumbnail}"
-                      alt="{$product_name_alt}"
-                      onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';"
-                  /></a>
-                </div>
-                <div class="description">
-                  <div class="prdInfo">
-                    <div class="prdNoption">
-                      <strong class="name">{$product_name_link}</strong>
-                      <div class="option {$option_display|display}">{$option_str}</div>
-                      <ul class="option" module="Myshop_optionSet">
-                        <li><strong>{$product_name}</strong>{$option_str} ({$qty} item(s))</li>
-                        <li><strong>{$product_name}</strong>{$option_str} ({$qty} item(s))</li>
-                      </ul>
+      <div class="flex h-full flex-col justify-between">
+        <div>
+          <!-- Product Details -->
+          <div class="orderArea {$order.product_price_display|display}">
+            <div class="title">
+              <h3>Product Details</h3>
+            </div>
+            <div class="ec-base-table typeList">
+              <div module="Myshop_OrderHistoryDetailOversea">
+                <div class="ec-base-prdInfo">
+                  <div class="prdBox">
+                    <div class="thumbnail">
+                      <a href="/product/detail.html{$param_product}"
+                        ><img
+                          src="{$thumbnail}"
+                          alt="{$product_name_alt}"
+                          onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';"
+                      /></a>
                     </div>
-                    <div class="prdStatus">
-                      <p>{$status}</p>
-                      <p class="{$shipping_company_display|display}">
-                        <a href="{$shipping_company_link}" target="{$shipping_company_target}"
-                          >{$shipping_company}</a
-                        >
-                      </p>
-                      <p class="{$invoice_no_display|display}">
-                        <a href="#none" class="line" onclick="{$shipping_trace_popup}"
-                          >[{$invoice_no}]</a
-                        >
-                      </p>
-                      <a
-                        href="#none"
-                        class="btnNormal {$withdraw_cancel_display|display}"
-                        onclick="{$action_withdraw_cancel}"
-                        >Cancel Withdraw</a
-                      >
-                      <a
-                        href="#none"
-                        class="btnNormal {$withdraw_exchange_display|display}"
-                        onclick="{$action_withdraw_exchange}"
-                        >Exchange Withdraw</a
-                      >
-                      <a
-                        href="#none"
-                        class="btnNormal {$withdraw_return_display|display}"
-                        onclick="{$action_withdraw_return}"
-                        >Return Withdraw</a
-                      >
-                    </div>
-                  </div>
-                  <div class="quantityPrice">
-                    <div class="quantity">
-                      <strong>QUANTITY</strong>
-                      <span>{$quantity}</span>
-                    </div>
-                    <div class="price">
-                      <strong
-                        >{$product_purchase_price_front_head}{$product_purchase_price_front}{$product_purchase_price_front_tail}</strong
-                      >
-                      <div class="{$product_purchase_price_ref_display|display}">
-                        {$product_purchase_price_back_head}{$product_purchase_price_back}{$product_purchase_price_back_tail}
+                    <div class="description">
+                      <div class="prdInfo">
+                        <div class="prdNoption">
+                          <strong class="name">{$product_name_link}</strong>
+                          <div class="option {$option_display|display}">{$option_str}</div>
+                          <ul class="option" module="Myshop_optionSet">
+                            <li><strong>{$product_name}</strong>{$option_str} ({$qty} item(s))</li>
+                            <li><strong>{$product_name}</strong>{$option_str} ({$qty} item(s))</li>
+                          </ul>
+                        </div>
+                        <div class="prdStatus">
+                          <p>{$status}</p>
+                          <p class="{$shipping_company_display|display}">
+                            <a href="{$shipping_company_link}" target="{$shipping_company_target}"
+                              >{$shipping_company}</a
+                            >
+                          </p>
+                          <p class="{$invoice_no_display|display}">
+                            <a href="#none" class="line" onclick="{$shipping_trace_popup}"
+                              >[{$invoice_no}]</a
+                            >
+                          </p>
+                          <a
+                            href="#none"
+                            class="btnNormal {$withdraw_cancel_display|display}"
+                            onclick="{$action_withdraw_cancel}"
+                            >Cancel Withdraw</a
+                          >
+                          <a
+                            href="#none"
+                            class="btnNormal {$withdraw_exchange_display|display}"
+                            onclick="{$action_withdraw_exchange}"
+                            >Exchange Withdraw</a
+                          >
+                          <a
+                            href="#none"
+                            class="btnNormal {$withdraw_return_display|display}"
+                            onclick="{$action_withdraw_return}"
+                            >Return Withdraw</a
+                          >
+                        </div>
+                      </div>
+                      <div class="quantityPrice">
+                        <div class="quantity">
+                          <strong>QUANTITY</strong>
+                          <span>{$quantity}</span>
+                        </div>
+                        <div class="price">
+                          <strong
+                            >{$product_purchase_price_front_head}{$product_purchase_price_front}{$product_purchase_price_front_tail}</strong
+                          >
+                          <div class="{$product_purchase_price_ref_display|display}">
+                            {$product_purchase_price_back_head}{$product_purchase_price_back}{$product_purchase_price_back_tail}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="ec-base-prdInfo">
-              <div class="prdBox">
-                <div class="thumbnail">
-                  <a href="/product/detail.html{$param_product}"
-                    ><img
-                      src="{$thumbnail}"
-                      alt="{$product_name_alt}"
-                      onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';"
-                  /></a>
-                </div>
-                <div class="description">
-                  <div class="prdInfo">
-                    <div class="prdNoption">
-                      <strong class="name">{$product_name_link}</strong>
-                      <div class="option {$option_display|display}">{$option_str}</div>
-                      <ul class="option" module="Myshop_optionSet">
-                        <li><strong>{$product_name}</strong>{$option_str} ({$qty} item(s))</li>
-                        <li><strong>{$product_name}</strong>{$option_str} ({$qty} item(s))</li>
-                      </ul>
+                <div class="ec-base-prdInfo">
+                  <div class="prdBox">
+                    <div class="thumbnail">
+                      <a href="/product/detail.html{$param_product}"
+                        ><img
+                          src="{$thumbnail}"
+                          alt="{$product_name_alt}"
+                          onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';"
+                      /></a>
                     </div>
-                    <div class="prdStatus">
-                      <p>{$status}</p>
-                      <p class="{$shipping_company_display|display}">
-                        <a href="{$shipping_company_link}" target="{$shipping_company_target}"
-                          >{$shipping_company}</a
-                        >
-                      </p>
-                      <p class="{$invoice_no_display|display}">
-                        <a href="#none" class="line" onclick="{$shipping_trace_popup}"
-                          >[{$invoice_no}]</a
-                        >
-                      </p>
-                      <a
-                        href="#none"
-                        class="btnNormal {$withdraw_cancel_display|display}"
-                        onclick="{$action_withdraw_cancel}"
-                        >Cancel Withdraw</a
-                      >
-                      <a
-                        href="#none"
-                        class="btnNormal {$withdraw_exchange_display|display}"
-                        onclick="{$action_withdraw_exchange}"
-                        >Exchange Withdraw</a
-                      >
-                      <a
-                        href="#none"
-                        class="btnNormal {$withdraw_return_display|display}"
-                        onclick="{$action_withdraw_return}"
-                        >Return Withdraw</a
-                      >
-                    </div>
-                  </div>
-                  <div class="quantityPrice">
-                    <div class="quantity">
-                      <strong>QUANTITY</strong>
-                      <span>{$quantity}</span>
-                    </div>
-                    <div class="price">
-                      <strong
-                        >{$product_purchase_price_front_head}{$product_purchase_price_front}{$product_purchase_price_front_tail}</strong
-                      >
-                      <div class="{$product_purchase_price_ref_display|display}">
-                        {$product_purchase_price_back_head}{$product_purchase_price_back}{$product_purchase_price_back_tail}
+                    <div class="description">
+                      <div class="prdInfo">
+                        <div class="prdNoption">
+                          <strong class="name">{$product_name_link}</strong>
+                          <div class="option {$option_display|display}">{$option_str}</div>
+                          <ul class="option" module="Myshop_optionSet">
+                            <li><strong>{$product_name}</strong>{$option_str} ({$qty} item(s))</li>
+                            <li><strong>{$product_name}</strong>{$option_str} ({$qty} item(s))</li>
+                          </ul>
+                        </div>
+                        <div class="prdStatus">
+                          <p>{$status}</p>
+                          <p class="{$shipping_company_display|display}">
+                            <a href="{$shipping_company_link}" target="{$shipping_company_target}"
+                              >{$shipping_company}</a
+                            >
+                          </p>
+                          <p class="{$invoice_no_display|display}">
+                            <a href="#none" class="line" onclick="{$shipping_trace_popup}"
+                              >[{$invoice_no}]</a
+                            >
+                          </p>
+                          <a
+                            href="#none"
+                            class="btnNormal {$withdraw_cancel_display|display}"
+                            onclick="{$action_withdraw_cancel}"
+                            >Cancel Withdraw</a
+                          >
+                          <a
+                            href="#none"
+                            class="btnNormal {$withdraw_exchange_display|display}"
+                            onclick="{$action_withdraw_exchange}"
+                            >Exchange Withdraw</a
+                          >
+                          <a
+                            href="#none"
+                            class="btnNormal {$withdraw_return_display|display}"
+                            onclick="{$action_withdraw_return}"
+                            >Return Withdraw</a
+                          >
+                        </div>
+                      </div>
+                      <div class="quantityPrice">
+                        <div class="quantity">
+                          <strong>QUANTITY</strong>
+                          <span>{$quantity}</span>
+                        </div>
+                        <div class="price">
+                          <strong
+                            >{$product_purchase_price_front_head}{$product_purchase_price_front}{$product_purchase_price_front_tail}</strong
+                          >
+                          <div class="{$product_purchase_price_ref_display|display}">
+                            {$product_purchase_price_back_head}{$product_purchase_price_back}{$product_purchase_price_back_tail}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1459,230 +1466,234 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Billing Information -->
-      <div class="orderArea">
-        <div class="title">
-          <h3>Billing Information</h3>
-        </div>
-        <div class="ec-base-table">
-          <table border="1" summary="" class="{$order.product_price_display|display}">
-            <caption>
-              Billing Information
-            </caption>
-            <colgroup>
-              <col style="width: 210px" />
-              <col style="width: auto" />
-            </colgroup>
-            <tbody>
-              <tr class="sum">
-                <th scope="row">Order Total</th>
-                <td>
-                  <span class="gSpace20">
-                    {$total.price_unit_head}<strong class="txt14">{$total.total_order_price}</strong
-                    >{$total.price_unit_tail}
-                    <span class="{$total.total_order_price_ref_display|display}"
-                      >{$total.total_order_price_back_head}{$total.total_order_price_back}{$total.total_order_price_back_tail}</span
-                    >
-                  </span>
-                  <a href="#none" class="btnNormal" onclick="{$total.total_order_layer_on}"
-                    >See Detail</a
-                  >
-
-                  <div class="content">
-                    <p>
-                      {$total.total_order_price_front_head}{$total.total_order_price_front}{$total.total_order_price_front_tail}
-                    </p>
-                    <ul class="ec-base-desc typeDot gLarge rightDD">
-                      <li>
-                        <strong class="term">Merchandise</strong
-                        ><span class="desc"
-                          >{$total.price_unit_head}{$total.total_product_price}{$total.price_unit_tail}</span
+          <!-- Billing Information -->
+          <div class="orderArea no-need-margin-top">
+            <div class="title hidden">
+              <h3>Billing Information</h3>
+            </div>
+            <div class="ec-base-table table-billing mt-4 lg:mt-10">
+              <table border="1" summary="" class="{$order.product_price_display|display}">
+                <caption>
+                  Billing Information
+                </caption>
+                <colgroup>
+                  <col style="width: 210px" />
+                  <col style="width: auto" />
+                </colgroup>
+                <tbody>
+                  <tr class="sum">
+                    <th scope="row">Order Total</th>
+                    <td>
+                      <span class="cost">
+                        {$total.price_unit_head}<strong>{$total.total_order_price}</strong>{$total.price_unit_tail}
+                        <span class="{$total.total_order_price_ref_display|display}"
+                          >{$total.total_order_price_back_head}{$total.total_order_price_back}{$total.total_order_price_back_tail}</span
                         >
-                      </li>
-                      <li class="{$total.total_vat_price_display|display}">
-                        <strong class="term">VAT</strong
-                        ><span class="desc"
-                          >{$total.price_unit_head}{$total.total_vat_price}{$total.price_unit_tail}</span
-                        >
-                      </li>
-                      <li>
-                        <strong class="term">Shipping</strong
-                        ><span class="desc"
-                          >{$total.price_unit_head}{$total.total_ship_fee}{$total.price_unit_tail}</span
-                        >
-                      </li>
-                      <li class="{$delivery.shipping_info_display|display}">
-                        <strong class="term">Additional Shipping</strong
-                        ><span class="desc"
-                          >{$total.price_unit_head}{$total.total_local_ship_fee}{$total.price_unit_tail}</span
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-            <tbody class="{$total.total_addsale_summary_display|display}">
-              <tr class="sum">
-                <th scope="row">Total discounted amount</th>
-                <td>
-                  {$total.price_unit_head}<strong class="txt14">{$total.total_addsale_price}</strong
-                  >{$total.price_unit_tail}
-                </td>
-              </tr>
-              <tr class="{$total.total_coupon_price_display|display}">
-                <th scope="row">Coupon discount</th>
-                <td>
-                  <span class="gSpace20"
-                    >{$total.price_unit_head}{$total.total_coupon_price}{$total.price_unit_tail}</span
-                  >
-                  <a href="#none" class="btnNormal eUsedCouponDetail">See Detail</a>
-                </td>
-              </tr>
-              <tr class="{$total.total_discountcode_price_display|display}">
-                <th scope="row">Promo code</th>
-                <td>
-                  <span class="gSpace20"
-                    >{$total.price_unit_head}{$total.total_discountcode_price}{$total.price_unit_tail}
-                    / {$total.total_discountcode_price_detail}</span
-                  >
-                </td>
-              </tr>
-              <tr class="{$total.total_benefit_price_display|display}">
-                <th scope="row">Additional discount</th>
-                <td>
-                  <span class="gSpace20"
-                    >{$total.price_unit_head}{$total.total_benefit_price}{$total.price_unit_tail}</span
-                  >
-                  <a href="#none" class="btnNormal" onclick="{$total.total_benefit_layer_on}"
-                    >See Detail</a
-                  >
-                </td>
-              </tr>
-            </tbody>
-            <tbody class="{$total.total_tax_display|display}">
-              <tr>
-                <th scope="row">{$total.total_tax_name}</th>
-                <td>
-                  {$total.price_unit_head}<strong class="txt14">{$total.total_tax_amount}</strong
-                  >{$total.price_unit_tail}
-                </td>
-              </tr>
-            </tbody>
-            <tbody class="{$total.total_addpay_summary_display|display}">
-              <tr class="sum">
-                <th scope="row">Alternative Payment Method</th>
-                <td>
-                  {$total.price_unit_head}<strong>{$total.total_addpay_price}</strong>{$total.price_unit_tail}
-                </td>
-              </tr>
-              <tr class="{$total.mileage_display|display}">
-                <th scope="row">{$mileage_name}</th>
-                <td>{$total.mileage_unit_head}{$total.mileage_used}{$total.mileage_unit_tail}</td>
-              </tr>
-              <tr class="{$total.deposit_display|display}">
-                <th scope="row">{$deposit_name}</th>
-                <td>{$total.deposit_used}{$deposit_unit}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="ec-base-table total">
-          <table border="1" summary="" class="{$order.product_price_display|display}">
-            <caption>
-              Billing Information
-            </caption>
-            <colgroup>
-              <col style="width: 210px" />
-              <col style="width: auto" />
-            </colgroup>
-            <tbody>
-              <tr class="sum">
-                <th scope="row">Order Total</th>
-                <td>
-                  <span class="txtEm">
-                    <strong class="txt18">{$payment.price_front_head}{$payment.price_front}</strong
-                    >{$payment.price_front_tail}
-                    <span class="{$payment.price_ref_display|display}"
-                      >{$payment.price_back_head}{$payment.price_back}{$payment.price_back_tail}</span
-                    >
-                  </span>
-                  <div class="btnTooltip {$dcc_info_display|display}">
-                    (DCC
-                    <a href="#none" onclick="{$dcc_tooltip_layer_on}"
-                      ><img
-                        src="//img.echosting.cafe24.com/skin/base_en_US/common/ico_tooltip.gif"
-                        alt="Help"
-                    /></a>
-                    : {$dcc_info})
-                    <div class="eximbayDCC ec-base-layer" id="{$dcc_tooltip_layer}">
-                      <div class="header">
-                        <h3>Eximbay DCC (Dynamic Currency Conversion)</h3>
-                      </div>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class="w-full">
                       <div class="content">
-                        <ul>
+                        <ul class="ec-base-desc ul-default">
                           <li>
-                            - The payment for this order was made using the DCC (Dynamic Currency
-                            Conversion) service provided by Eximbay.
-                            <span class="dccLink"
-                              ><a
-                                href="https://www.eximbay.com/service/dcc_service.do?pageGroup=MS0000001&pageType=M&m_root_seq=1000&m_mnu_seq=5000"
-                                target="_blank"
-                                >[About Eximbay DCC (Dynamic Currency Conversion) Service ▶]</a
-                              ></span
+                            <strong class="term">Merchandise</strong
+                            ><span class="desc"
+                              >{$total.price_unit_head}{$total.total_product_price}{$total.price_unit_tail}</span
+                            >
+                          </li>
+                          <li class="{$total.total_vat_price_display|display}">
+                            <strong class="term">VAT</strong
+                            ><span class="desc"
+                              >{$total.price_unit_head}{$total.total_vat_price}{$total.price_unit_tail}</span
                             >
                           </li>
                           <li>
-                            - The payment total was determined based on the exchange rate set by
-                            EXIMBAY at the time of the transaction.
+                            <strong class="term">Shipping</strong
+                            ><span class="desc"
+                              >{$total.price_unit_head}{$total.total_ship_fee}{$total.price_unit_tail}</span
+                            >
                           </li>
-                          <li>
-                            - Any partial cancellation will be processed based on the exchange rate
-                            used at the time of the transaction.
+                          <li class="{$delivery.shipping_info_display|display}">
+                            <strong class="term">Additional Shipping</strong
+                            ><span class="desc"
+                              >{$total.price_unit_head}{$total.total_local_ship_fee}{$total.price_unit_tail}</span
+                            >
                           </li>
                         </ul>
                       </div>
-                      <a href="#none" class="close" onclick="{$dcc_tooltip_layer_off}"
-                        ><img
-                          src="//img.echosting.cafe24.com/skin/base/common/btn_close.gif"
-                          alt="Close"
-                      /></a>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr class="{$payment.paymethod_display|display}">
-                <th scope="row">Method of Payment</th>
-                <td>
-                  <strong>{$payment.paymethod}</strong>
-                  <p>
-                    {$payment.paymethod_detail}
-                    <a
-                      target="_blank"
-                      href="{$payment.pay_extra_url}"
-                      id="{$payment.btn_payment_link_id}"
-                      class="btnNormal {$payment.paymenturl_display|display}"
-                      >Go to payment page</a
-                    >
-                  </p>
-                </td>
-              </tr>
-              <tr class="detail {$payment.eguarantee_display|display}">
-                <th scope="row">About Online Purchase Protection</th>
-                <td>{$payment.eguarantee_detail}</td>
-              </tr>
-            </tbody>
-          </table>
+                    </td>
+                  </tr>
+                </tbody>
+                <tbody class="{$total.total_addsale_summary_display|display}">
+                  <tr class="sum">
+                    <th scope="row">Total discounted amount</th>
+                    <td>
+                      <span class="cost">
+                        -
+                        {$total.price_unit_head}<strong>{$total.total_addsale_price}</strong>{$total.price_unit_tail}
+                      </span>
+                    </td>
+                  </tr>
+                  <tr class="{$total.total_coupon_price_display|display}">
+                    <th scope="row">Coupon discount</th>
+                    <td>
+                      <span
+                        >-
+                        {$total.price_unit_head}{$total.total_coupon_price}{$total.price_unit_tail}</span
+                      >
+                      <a href="#none" class="btnNormal eUsedCouponDetail">See Detail</a>
+                    </td>
+                  </tr>
+                  <tr class="{$total.total_discountcode_price_display|display}">
+                    <th scope="row">Promo code</th>
+                    <td>
+                      <span
+                        >-
+                        {$total.price_unit_head}{$total.total_discountcode_price}{$total.price_unit_tail}
+                        / {$total.total_discountcode_price_detail}</span
+                      >
+                    </td>
+                  </tr>
+                  <tr class="{$total.total_benefit_price_display|display}">
+                    <th scope="row">Additional discount</th>
+                    <td>
+                      <span
+                        >-
+                        {$total.price_unit_head}{$total.total_benefit_price}{$total.price_unit_tail}</span
+                      >
+                      <a href="#none" class="btnNormal" onclick="{$total.total_benefit_layer_on}"
+                        >See Detail</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+                <tbody class="{$total.total_tax_display|display}">
+                  <tr>
+                    <th scope="row">{$total.total_tax_name}</th>
+                    <td>
+                      {$total.price_unit_head}<strong>{$total.total_tax_amount}</strong>{$total.price_unit_tail}
+                    </td>
+                  </tr>
+                </tbody>
+                <tbody class="{$total.total_addpay_summary_display|display}">
+                  <tr class="sum">
+                    <th scope="row">Alternative Payment Method</th>
+                    <td>
+                      <span class="cost">
+                        -
+                        {$total.price_unit_head}<strong>{$total.total_addpay_price}</strong>{$total.price_unit_tail}
+                      </span>
+                    </td>
+                  </tr>
+                  <tr class="{$total.mileage_display|display}">
+                    <th scope="row">{$mileage_name}</th>
+                    <td>
+                      - {$total.mileage_unit_head}{$total.mileage_used}{$total.mileage_unit_tail}
+                    </td>
+                  </tr>
+                  <tr class="{$total.deposit_display|display}">
+                    <th scope="row">{$deposit_name}</th>
+                    <td>- {$total.deposit_used}{$deposit_unit}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="ec-base-table table-billing">
+              <table border="1" summary="" class="{$order.product_price_display|display}">
+                <caption>
+                  Billing Information
+                </caption>
+                <colgroup>
+                  <col style="width: 210px" />
+                  <col style="width: auto" />
+                </colgroup>
+                <tbody>
+                  <tr class="sum">
+                    <th scope="row">Total</th>
+                    <td>
+                      <span class="cost final">
+                        <strong>{$payment.price_front_head}{$payment.price_front}</strong
+                        >{$payment.price_front_tail}
+                        <span class="{$payment.price_ref_display|display}"
+                          >{$payment.price_back_head}{$payment.price_back}{$payment.price_back_tail}</span
+                        >
+                      </span>
+                      <div class="btnTooltip {$dcc_info_display|display}">
+                        (DCC
+                        <a href="#none" onclick="{$dcc_tooltip_layer_on}"
+                          ><img
+                            src="//img.echosting.cafe24.com/skin/base_en_US/common/ico_tooltip.gif"
+                            alt="Help"
+                        /></a>
+                        : {$dcc_info})
+                        <div class="eximbayDCC ec-base-layer" id="{$dcc_tooltip_layer}">
+                          <div class="header">
+                            <h3>Eximbay DCC (Dynamic Currency Conversion)</h3>
+                          </div>
+                          <div class="content">
+                            <ul>
+                              <li>
+                                - The payment for this order was made using the DCC (Dynamic
+                                Currency Conversion) service provided by Eximbay.
+                                <span class="dccLink"
+                                  ><a
+                                    href="https://www.eximbay.com/service/dcc_service.do?pageGroup=MS0000001&pageType=M&m_root_seq=1000&m_mnu_seq=5000"
+                                    target="_blank"
+                                    >[About Eximbay DCC (Dynamic Currency Conversion) Service ▶]</a
+                                  ></span
+                                >
+                              </li>
+                              <li>
+                                - The payment total was determined based on the exchange rate set by
+                                EXIMBAY at the time of the transaction.
+                              </li>
+                              <li>
+                                - Any partial cancellation will be processed based on the exchange
+                                rate used at the time of the transaction.
+                              </li>
+                            </ul>
+                          </div>
+                          <a href="#none" class="close" onclick="{$dcc_tooltip_layer_off}"
+                            ><img
+                              src="//img.echosting.cafe24.com/skin/base/common/btn_close.gif"
+                              alt="Close"
+                          /></a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="{$payment.paymethod_display|display}">
+                    <td rowspan="2">
+                      <strong class="font-normal uppercase">{$payment.paymethod}</strong>
+                      <p>
+                        {$payment.paymethod_detail}
+                        <a
+                          target="_blank"
+                          href="{$payment.pay_extra_url}"
+                          id="{$payment.btn_payment_link_id}"
+                          class="btnNormal {$payment.paymenturl_display|display}"
+                          >Go to payment page</a
+                        >
+                      </p>
+                    </td>
+                  </tr>
+                  <tr class="detail {$payment.eguarantee_display|display}">
+                    <th scope="row">About Online Purchase Protection</th>
+                    <td>{$payment.eguarantee_detail}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
-      </div>
-      <!-- button wrap -->
-      <div class="ec-base-button">
-        <span class="gRight">
-          <a href="/myshop/order/list.html{$param_list}" class="btnSubmitFix sizeM">Back</a>
-        </span>
+        <!-- button wrap -->
+        <div class="ec-base-button">
+          <div class="btn-wrap">
+            <a href="/myshop/order/list.html{$param_list}" class="btnSubmitFix sizeM">Back</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

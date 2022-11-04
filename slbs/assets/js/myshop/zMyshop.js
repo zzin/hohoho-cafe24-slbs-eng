@@ -5,6 +5,9 @@
   if (href.includes('order/list.html')) {
     goIndex = 1;
   }
+  if (href.includes('myshop/wish_list.html')) {
+    goIndex = 2;
+  }
 
   function navbar(el) {
     if (goIndex !== 0) {

@@ -57,8 +57,7 @@
       @apply border border-black bg-white text-black;
     }
   }
-}
-
-.ec-base-prdEmpty {
-  @apply border-y border-black py-10 text-center uppercase lg:text-xl;
+  .ec-base-prdEmpty {
+    @apply border-y border-black py-10 text-center uppercase lg:text-xl;
+  }
 }

@@ -1,0 +1,35 @@
+body[data-body='normal'] {
+  .xans-coupon-productdetailajax {
+    @apply m-0 border-b border-black;
+    & > .title h2 {
+      @apply border-b border-black px-2.5 py-3 text-lg font-bold leading-none lg:px-5 lg:text-[22px];
+    }
+    .couponSkinArea {
+      @apply py-5 first:lg:py-10;
+      .coupon {
+        @apply relative mb-0 flex h-full w-full flex-col justify-between border border-black bg-none p-5 pt-8 text-left;
+        .header {
+          @apply absolute top-0 left-0 w-full border-b border-black px-5 text-sm font-bold leading-8;
+        }
+        .title {
+          @apply text-left text-xl font-bold;
+        }
+        .discount {
+          @apply text-left text-base font-bold;
+        }
+        .period {
+          @apply text-left text-xs font-normal;
+        }
+        .button {
+          @apply mt-4 text-left;
+          a {
+            @apply inline-block bg-black px-6 py-1.5 font-bold leading-none text-white;
+          }
+        }
+      }
+    }
+  }
+  .coupon-wrap {
+    @apply grid grid-cols-1 gap-5 px-2.5 md:grid-cols-2 lg:grid-cols-3 lg:px-5 xl:grid-cols-4;
+  }
+}
