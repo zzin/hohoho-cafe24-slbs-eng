@@ -1,0 +1,70 @@
+.point-wrap {
+  h2 {
+    @apply mb-3 text-lg font-bold lg:mb-5 lg:text-xl;
+  }
+  .ul-point {
+    @apply flex border border-black;
+    & > li {
+      @apply float-none m-0 flex h-auto w-auto flex-1 flex-col border-r border-black p-0 text-center;
+      &:last-child {
+        @apply border-r-0;
+      }
+      strong {
+        @apply block w-full border-b border-black py-2 text-xs lg:text-sm;
+        br {
+          @apply block lg:hidden;
+        }
+      }
+      .value {
+        @apply py-6 text-[22px] font-bold lg:text-2xl;
+      }
+    }
+  }
+  .table-point {
+    table {
+      @apply block border-0 border-t border-black text-base lg:table;
+      thead {
+        @apply hidden lg:table-header-group;
+      }
+      tbody {
+        @apply block lg:table-row-group;
+      }
+      thead,
+      tbody {
+        tr {
+          @apply block lg:table-row;
+          &::after {
+            content: '';
+            @apply clear-both table lg:clear-none;
+          }
+          th,
+          td {
+            @apply border-0 border-b border-solid border-black bg-white p-0 py-3 text-left uppercase text-black;
+            a {
+              @apply block text-xs;
+            }
+          }
+          th {
+            @apply font-bold;
+          }
+          td {
+            @apply block lg:table-cell;
+            &:first-child {
+              @apply truncate border-b-0 pb-0 lg:border-b lg:pr-1 lg:pb-3;
+            }
+            &:nth-child(2) {
+              @apply float-right text-right lg:text-left;
+            }
+            &:nth-child(3) {
+              @apply float-left;
+            }
+            &:nth-child(2),
+            &:nth-child(3) {
+              @apply w-1/2 whitespace-nowrap pt-0 text-sm lg:float-none lg:w-auto lg:pt-3 lg:text-base;
+            }
+          }
+        }
+      }
+    }
+  }
+}

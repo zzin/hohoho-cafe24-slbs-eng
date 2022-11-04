@@ -125,6 +125,44 @@
     .prdReview--title {
       @apply border-b border-black py-3 px-2.5 text-lg font-bold leading-none lg:px-5 lg:text-[22px];
     }
+    // review
+    #zReviewWrap {
+      .xans-record- {
+        @apply border-b border-black;
+        .metaWrap,
+        .reviewWrap {
+          @apply flex justify-between px-2.5 py-4 lg:px-5;
+        }
+        .reviewWrap {
+          @apply flex-col pt-0 lg:flex-row;
+          .reviewWrap-subject {
+            .link {
+              @apply hidden;
+            }
+            h3 {
+              @apply p-0 text-base font-bold text-black;
+            }
+          }
+          .reviewWrap-content {
+            @apply text-base text-black;
+          }
+          .reviewWrap-photo {
+            @apply lg:pl-5;
+            ul {
+              @apply flex gap-2.5;
+              li {
+                figure {
+                  @apply h-[60px] w-[60px] overflow-hidden;
+                  img {
+                    @apply h-full w-full max-w-fit content-center object-cover;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
   .ec-base-tab {
     @apply m-0 p-0;

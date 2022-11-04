@@ -123,10 +123,10 @@
   .xans-myshop-orderhistoryhead {
     fieldset {
       .fText {
-        @apply h-[40px] w-[135px] border border-black bg-white pr-8 pl-2 text-base;
+        @apply h-[40px] w-[135px] border border-black bg-white pr-6 pl-2 text-base;
       }
       button.ui-datepicker-trigger {
-        @apply absolute right-1 top-1/2 block h-5 w-5 -translate-y-1/2 overflow-hidden bg-contain bg-center bg-no-repeat;
+        @apply absolute right-0.5 top-1/2 block h-5 w-5 -translate-y-1/2 overflow-hidden bg-contain bg-center bg-no-repeat;
         background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' xmlns:serif='http://www.serif.com/' style='fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;'%3E%3Cpath d='M13.6,4.6l0,-0.6l-1.2,-0l0,0.6l-1.8,-0l0,-0.6l-1.2,-0l0,0.6l-1.8,-0l-0,-0.6l-1.2,-0l0,0.6l-2.4,-0l0,11.4l12,0l0,-11.4l-2.4,0Zm1.2,10.2l-9.6,0l0,-6l9.6,0l0,6Zm-9.6,-7.2l0,-1.8l1.2,-0l0,0.6l1.2,0l0,-0.6l1.8,-0l0,0.6l1.2,0l0,-0.6l1.8,-0l0,0.6l1.2,0l0,-0.6l1.2,-0l0,1.8l-9.6,-0Z' style='fill-rule:nonzero;'/%3E%3Crect x='6.4' y='10' width='1.2' height='1.2' style='fill-rule:nonzero;'/%3E%3Crect x='6.4' y='12.4' width='1.2' height='1.2' style='fill-rule:nonzero;'/%3E%3Crect x='9.4' y='12.4' width='1.2' height='1.2' style='fill-rule:nonzero;'/%3E%3Crect x='12.4' y='12.4' width='1.2' height='1.2' style='fill-rule:nonzero;'/%3E%3Crect x='9.4' y='10' width='1.2' height='1.2' style='fill-rule:nonzero;'/%3E%3Crect x='12.4' y='10' width='1.2' height='1.2' style='fill-rule:nonzero;'/%3E%3C/svg%3E");
         img {
           @apply hidden;

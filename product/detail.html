@@ -1004,117 +1004,77 @@
     <a name="use_review" class="absolute -mt-10"></a>
     <div id="prdReview" class="ec-base-tab gFlex {$review_display|display}">
       <ul class="menu">
-        <li><a href="#prdDetail">Product Details</a></li>
-        <li><a href="#prdInfo">Help</a></li>
-        <li class="selected"><a href="#prdReview">Reviews</a></li>
-        <li><a href="#prdQnA">Q&amp;A</a></li>
-        <li><a href="#prdRelated">Related Items</a></li>
+        <li><a href="#prdDetail">상품상세정보</a></li>
+        <li><a href="#prdInfo">상품구매안내</a></li>
+        <li class="selected"><a href="#prdReview">상품리뷰</a></li>
       </ul>
+      <h3 class="prdReview--title">REVIEW <span></span></h3>
       <div class="board">
-        <h3>Reviews</h3>
-        <p class="desc">Write your reviews here.</p>
-
         <div module="product_review">
-          <!--@js(/js/module/product/review.js)-->
-          <a name="use_review"></a>
-
-          <p class="noAccess {$deny_display|display}">
-            You do not have permission to view this page.
-          </p>
-
-          <div class="minor {$adult_display|display}">
-            <p>
-              <img
-                src="//img.echosting.cafe24.com/skin/base_en_US/product/ico_under19.gif"
-                alt="under19"
-              />This page is not available to <strong> "users under age 18". </strong>!
-            </p>
-            <p class="button">
-              <a href="/intro/board.html{$returnParam}" class="btnEm sizeS">Adult certification</a>
-            </p>
-          </div>
-
-          <div class="ec-base-table typeList">
-            <table border="1" summary="" class="{$list_display|display}">
-              <caption>
-                Product Reviews
-              </caption>
-              <colgroup>
-                <col style="width: 70px" />
-                <col style="width: auto" />
-                <col style="width: 100px" />
-                <col style="width: 100px" />
-                <col style="width: 80px" />
-                <col style="width: 80px" class="{$use_point_display|display}" />
-              </colgroup>
-              <thead>
-                <tr>
-                  <th scope="col">No.</th>
-                  <th scope="col">Title</th>
-                  <th scope="col">Posted by</th>
-                  <th scope="col">Date</th>
-                  <th scope="col">Views</th>
-                  <th scope="col" class="{$use_point_display|display}">Rates</th>
-                </tr>
-              </thead>
-              <tbody class="center">
-                <tr class="{$block_target_class}" {$block_data_attr}>
-                  <td>{$no}</td>
-                  <td class="subject left txtBreak">
-                    {$icon_re}{$icon_lock}
-                    <a href="{$link_board_detail}{$param_read}" class="{$block_content_class}"
-                      >{$subject}</a
-                    >
-                    {$icon_new}{$icon_hit}{$icon_file}<span class="txtWarn">{$comment_count}</span>
-                  </td>
-                  <td>{$member_icon} {$writer}</td>
-                  <td class="txtInfo txt11">{$write_date}</td>
-                  <td class="txtInfo txt11">{$hit_count}</td>
-                  <td class="{$use_point_display|display}">
-                    <img
-                      src="//img.echosting.cafe24.com/skin/base/board/ico_point{$point_count}.gif"
-                      alt="{$point_count}points"
-                    />
-                  </td>
-                </tr>
-                <tr class="{$block_target_class}" {$block_data_attr}>
-                  <td>{$no}</td>
-                  <td class="subject left txtBreak">
-                    {$icon_re}{$icon_lock}
-                    <a href="{$link_board_detail}{$param_read}" class="{$block_content_class}"
-                      >{$subject}</a
-                    >
-                    {$icon_new}{$icon_hit}{$icon_file}<span class="txtWarn">{$comment_count}</span>
-                  </td>
-                  <td>{$member_icon} {$writer}</td>
-                  <td class="txtInfo txt11">{$write_date}</td>
-                  <td class="txtInfo txt11">{$hit_count}</td>
-                  <td class="{$use_point_display|display}">
-                    <img
-                      src="//img.echosting.cafe24.com/skin/base/board/ico_point{$point_count}.gif"
-                      alt="{$point_count}points"
-                    />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <!--@js(/slbs/assets/js/product/zReview.js)-->
+          <p class="noAccess {$deny_display|display}">글읽기 권한이 없습니다.</p>
+          <div id="zReviewWrap">
+            <ul>
+              <li>
+                <div class="metaWrap">
+                  <div class="metaWrap-writer">{$writer}</div>
+                  <div class="metaWrap-date">{$write_date}</div>
+                </div>
+                <div class="reviewWrap">
+                  <div class="reviewWrap-contents">
+                    <div class="reviewWrap-rank">
+                      <img
+                        src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating{$point_count}.svg"
+                        alt="{$point_count}점"
+                      />
+                    </div>
+                    <div class="reviewWrap-subject">
+                      <a href="{$link_board_detail}{$param_read}" class="link" data-uid="{$no}"
+                        >{$subject}</a
+                      >
+                      <h3>{$subject}</h3>
+                    </div>
+                    <div class="reviewWrap-content">{$content}</div>
+                  </div>
+                  <div class="reviewWrap-photo photo-{$no}"></div>
+                </div>
+              </li>
+              <li>
+                <div class="metaWrap">
+                  <div class="metaWrap-writer">{$writer}</div>
+                  <div class="metaWrap-date">{$write_date}</div>
+                </div>
+                <div class="reviewWrap">
+                  <div class="reviewWrap-contents">
+                    <div class="reviewWrap-rank">
+                      <img
+                        src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating{$point_count}.svg"
+                        alt="{$point_count}점"
+                      />
+                    </div>
+                    <div class="reviewWrap-subject">
+                      <a href="{$link_board_detail}{$param_read}" class="link" data-uid="{$no}"
+                        >{$subject}</a
+                      >
+                      <h3>{$subject}</h3>
+                    </div>
+                    <div class="reviewWrap-content">{$content}</div>
+                  </div>
+                  <div class="reviewWrap-photo photo-{$no}"></div>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
-
-        <p class="ec-base-button typeBorder">
+        <p class="ec-base-button hidden">
           <span class="gRight">
-            <a href="{$review_write}" class="btnNormal">Write a Review</a>
-            <a href="{$review_list}" class="btnNormal">See All</a>
+            <a href="{$review_list}" class="btnNormalFix sizeM">전체보기</a>
+            <a href="{$review_write}" class="btnSubmitFix sizeM">리뷰작성</a>
           </span>
         </p>
-
-        <div module="product_reviewpaging" class="ec-base-paginate typeSub">
-          <a href="{$param_first}" class="first"
-            ><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_first2.gif" alt="First"
-          /></a>
-          <a href="{$param_before}"
-            ><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_prev2.gif" alt="Prev"
-          /></a>
+        <div module="product_reviewpaging" class="ec-base-paginate typeList">
+          <a href="{$param_first}" class="first">First</a>
+          <a href="{$param_before}">Prev</a>
           <ol>
             <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
             <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
@@ -1122,12 +1082,8 @@
             <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
             <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
           </ol>
-          <a href="{$param_next}"
-            ><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_next2.gif" alt="Next"
-          /></a>
-          <a href="{$param_last}" class="last"
-            ><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_last2.gif" alt="Last"
-          /></a>
+          <a href="{$param_next}">Next</a>
+          <a href="{$param_last}" class="last">Last</a>
         </div>
       </div>
     </div>

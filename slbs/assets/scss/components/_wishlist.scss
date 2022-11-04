@@ -1,0 +1,58 @@
+.xans-myshop-wishlist {
+  .xans-myshop-wishlistitem {
+    @apply grid grid-cols-2 border-t border-black lg:grid-cols-4;
+    & > li {
+      @apply border-r border-b border-black;
+      &:nth-child(2n) {
+        @apply border-r-0 lg:border-r;
+      }
+      &:nth-child(4n) {
+        @apply border-r-0;
+      }
+      .prdBox {
+        @apply relative h-full;
+        .btnDel {
+          @apply absolute top-2.5 left-2.5 z-[1] lg:top-5 lg:left-5;
+        }
+        figure {
+          @apply leading-[0];
+          img {
+            @apply w-full object-cover;
+          }
+          .icon_img {
+            @apply hidden;
+            & + img {
+              @apply opacity-50 blur-[4px];
+            }
+          }
+        }
+        .description {
+          @apply absolute left-0 bottom-0 w-full bg-white/80 p-2.5 text-xs font-bold lg:p-5 lg:text-xl;
+          .nameNprice {
+            @apply flex justify-between;
+            .price {
+              @apply pl-4;
+            }
+          }
+        }
+      }
+    }
+  }
+  .message {
+    @apply border-0 py-10 px-2.5 text-center font-normal uppercase text-black lg:py-20 lg:px-5;
+    figure {
+      img {
+        @apply mx-auto h-auto max-w-[180px] lg:max-w-[210px];
+      }
+    }
+    h3 {
+      @apply mb-2.5 text-xl font-bold lg:mb-4 lg:text-[22px];
+    }
+    .desc {
+      @apply mb-5 text-sm lg:mb-7;
+    }
+    a {
+      @apply text-base font-bold underline;
+    }
+  }
+}

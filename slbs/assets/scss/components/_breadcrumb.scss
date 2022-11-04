@@ -8,7 +8,7 @@
   }
   &.has-next-margin {
     & + div {
-      @apply mt-10 lg:mt-[50px];
+      @apply mt-[calc(40px-1px)] lg:mt-[calc(50px-1px)];
     }
   }
   i {
