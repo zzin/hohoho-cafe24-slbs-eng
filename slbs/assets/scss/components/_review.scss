@@ -1,0 +1,152 @@
+.xans-board-write-4,
+.xans-board-4 {
+  .ec-base-box.typeProduct {
+    @apply m-0 mt-2.5 flex items-center border border-black p-2.5 lg:mt-0 lg:p-5;
+    .thumbnail {
+      @apply mr-2 w-auto p-0 leading-[0] lg:mr-3;
+      img {
+        @apply h-auto w-36 max-w-none border-none;
+      }
+    }
+    .information {
+      @apply flex h-full w-full flex-col justify-between p-0 text-black;
+      h3 {
+        @apply mt-0 border-b border-black pb-2 text-base font-bold uppercase;
+      }
+      .price {
+        @apply text-xl font-bold text-black;
+      }
+      .button {
+        @apply border-0;
+      }
+    }
+  }
+  .ec-base-table {
+    table {
+      @apply mt-5 border-0 lg:mt-10;
+      #subject {
+        @apply w-full;
+      }
+      select {
+        @apply w-full;
+      }
+      &::before {
+        @apply hidden;
+      }
+      tbody {
+        @apply block w-full lg:table-row-group;
+        tr {
+          @apply flex w-full flex-col lg:table-row;
+          th,
+          td {
+            @apply border-0 bg-white p-0 pb-3 uppercase text-black;
+            input[type='text'],
+            input[type='password'],
+            select,
+            textarea {
+              @apply w-full;
+              & + .error {
+                @apply mt-1 text-xs text-[#f00];
+              }
+            }
+            input[type='radio'],
+            input[type='checkbox'] {
+              @apply bg-white shadow-none ring-0 ring-white transition-none;
+            }
+            .eTooltip {
+              @apply w-full;
+            }
+            .type-desc {
+              @apply mt-1 text-xs;
+            }
+          }
+          th {
+            @apply pt-2 text-base font-bold leading-none;
+            br {
+              @apply hidden lg:block;
+            }
+          }
+        }
+      }
+    }
+    .etcArea {
+      @apply flex flex-col uppercase;
+      & > li {
+        @apply m-0 flex p-0 py-2 leading-none text-black;
+        strong {
+          @apply lg:w-[210px];
+        }
+        span {
+          @apply text-base text-black;
+        }
+      }
+    }
+    .detail {
+      @apply m-0 mt-1 border-t border-black p-0 pt-4;
+    }
+    .adminAnswer {
+      @apply flex items-center;
+    }
+  }
+  .fr-box.fr-basic {
+    @apply mb-4;
+  }
+  ul.info {
+    @apply mt-4 p-0 text-xs uppercase text-black lg:pl-[210px];
+    & > li {
+      @apply bg-none p-0;
+    }
+  }
+  .ec-base-button {
+    @apply m-0 my-7 p-0 lg:pl-[210px];
+    .button-wrap {
+      @apply flex flex-col-reverse justify-between gap-3 lg:flex-row;
+      & > .zBtn {
+        @apply flex-1;
+      }
+    }
+  }
+}
+.xans-board-4 {
+  .ec-base-button {
+    @apply pl-0;
+    .button-wrap {
+      @apply flex w-full flex-col-reverse  justify-between lg:flex-row;
+      [class^='group'] {
+        .zBtn {
+          @apply w-full lg:w-auto;
+        }
+        &.groupRight {
+          @apply flex flex-col-reverse gap-3 lg:flex-row;
+        }
+      }
+    }
+  }
+}
+.myshopReviewList {
+  @apply pt-2.5 lg:pt-0;
+  .xans-myshop {
+    table {
+      @apply m-0 border-0;
+      &::before {
+        @apply hidden;
+      }
+      tbody,
+      thead {
+        tr {
+          th,
+          td {
+            @apply border-0 border-b border-solid border-black bg-white px-0 text-base;
+          }
+        }
+      }
+      thead {
+        tr {
+          th {
+            @apply border-t text-left font-bold uppercase;
+          }
+        }
+      }
+    }
+  }
+}

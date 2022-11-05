@@ -10,7 +10,11 @@
     if (href.includes('myshop/wish_list.html')) {
       goIndex = 2;
     }
-    if (href.includes('/myshop/board_list.html')) {
+    if (
+      href.includes('/myshop/board_list.html') ||
+      href.includes('write.html') ||
+      href.includes('review')
+    ) {
       goIndex = 3;
     }
     if (href.includes('coupon.html')) {
