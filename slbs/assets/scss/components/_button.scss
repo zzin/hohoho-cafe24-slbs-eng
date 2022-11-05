@@ -10,3 +10,16 @@ a[class^='btnSubmit'] {
 [class^='btnSubmit']:not(.disabled):hover {
   @apply bg-black font-sans;
 }
+
+.zBtn {
+  @apply appearance-none;
+  &--default {
+    @apply inline-block h-[50px] whitespace-nowrap rounded-none border border-solid border-black px-5 text-xl font-bold uppercase leading-[50px] no-underline;
+    &:hover {
+      @apply no-underline;
+    }
+  }
+  &.black {
+    @apply bg-black text-white;
+  }
+}

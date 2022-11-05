@@ -19,6 +19,9 @@
     if (href.includes('historyList.html')) {
       goIndex = 5;
     }
+    if (href.includes('modify.html')) {
+      goIndex = 6;
+    }
     // console.log(href, lastUrl, goIndex);
     if (goIndex !== 0) {
       el.querySelector('.ul-nav-myshop .item:nth-child(' + Number(goIndex) + ')').classList.add(

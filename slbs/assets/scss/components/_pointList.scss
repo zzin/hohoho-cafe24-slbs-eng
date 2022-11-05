@@ -63,6 +63,12 @@
               @apply w-1/2 whitespace-nowrap pt-0 text-sm lg:float-none lg:w-auto lg:pt-3 lg:text-base;
             }
           }
+          &.empty {
+            td {
+              @apply pb-3;
+            }
+            @apply border-b border-black;
+          }
         }
       }
     }
