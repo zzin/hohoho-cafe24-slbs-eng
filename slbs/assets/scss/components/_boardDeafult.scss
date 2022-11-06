@@ -1,0 +1,71 @@
+.boardDefault {
+  .xans-board {
+    @apply text-black;
+    .titleArea {
+      @apply m-0 mt-2.5 border-0 text-left lg:mt-5;
+      h2 {
+        @apply text-base font-bold uppercase text-black lg:text-xl;
+        font {
+          color: black !important;
+        }
+      }
+    }
+    .ec-base-table {
+      @apply mt-2.5 lg:mt-5;
+      table {
+        @apply m-0 border-0 border-t border-solid border-black;
+        &::before {
+          @apply hidden;
+        }
+        tbody,
+        thead {
+          tr {
+            th,
+            td {
+              @apply border-0 border-b border-solid border-black bg-white px-0 text-left text-base;
+              a {
+                @apply text-black;
+              }
+              &:first-child {
+                @apply uppercase;
+              }
+            }
+            th {
+              @apply font-bold text-black;
+            }
+          }
+        }
+        thead {
+          tr {
+            th {
+              @apply text-left font-bold uppercase text-black;
+            }
+          }
+        }
+        & + .message {
+          @apply m-0 border-0 border-b border-black uppercase;
+        }
+        tbody {
+          .detail {
+            @apply border-t border-black p-0 py-5;
+          }
+          .etcArea {
+            & > li {
+              @apply flex px-0 pt-0.5 text-black;
+              & > strong,
+              & > span {
+                @apply text-black;
+              }
+              & > strong {
+                @apply lg:min-w-[210px];
+              }
+              & > span {
+                @apply text-black;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
